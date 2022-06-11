@@ -11,4 +11,4 @@ export const DDPaths = {
   PROFILE_ICON_BASE: `${BASE}img/profileicon/`,
   ITEM_ICON_BASE: `${BASE}img/item/`,
   RUNE_ICON_BASE: `./public/pics/league/`,
-}
+} as const

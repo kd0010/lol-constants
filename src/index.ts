@@ -22,4 +22,4 @@ export const championByName = _championByName
 // # scripts
 
 // # types
-export type { ChampionKey, ChampionName } from './types'
+export { ChampionKey, ChampionName } from './types'
