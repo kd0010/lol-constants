@@ -23,8 +23,7 @@
     
     // ## Interop Constraints
     "esModuleInterop": true,
-    // TEMP
-    "isolatedModules": false,
+    "isolatedModules": true,
 
     // ## Language and Environment
     "target": "esnext",
