@@ -20,3 +20,6 @@ export const championByName = _championByName
 // # Helpers
 
 // # scripts
+
+// # types
+export * from './types'
