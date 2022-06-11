@@ -1,0 +1,31 @@
+{
+  "include": [
+    "src/**/*",
+  ],
+  "compilerOptions": {
+    // ## Type Checking
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // ## Modules
+    "module": "commonjs",
+    "resolveJsonModule": true,
+
+    // ## Emit
+    "declaration": true,
+    "noEmitOnError": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    
+    // ## Interop Constraints
+    "esModuleInterop": true,
+    "isolatedModules": true,
+
+    // ## Language and Environment
+    "target": "esnext",
+  }
+}

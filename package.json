@@ -1,0 +1,25 @@
+{
+  "name": "lol-constants",
+  "version": "0.1.0",
+  "description": "League of Legends constants and data resources, such as champion, item, runes reforged, summoner.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rmdir /s /q dist && tsc",
+    "publish-new-major": "npm run build && npm version major && npm publish",
+    "publish-new-minor": "npm run build && npm version minor && npm publish",
+    "publish-new-patch": "npm run build && npm version patch && npm publish",
+    "generate": "node dist/scripts/generate-all"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.42"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kd0010/lol-constants.git"
+  }
+}
