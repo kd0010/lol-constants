@@ -23,3 +23,4 @@ export const championByName = _championByName
 
 // # types
 export * from './types'
+export * from './types/Meta'
