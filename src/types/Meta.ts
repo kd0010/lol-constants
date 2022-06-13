@@ -49,7 +49,16 @@ export type PlatformId =
 
 export type Region =
   | 'EUW'
-  // ...
+  | 'EUNE'
+  | 'NA'
+  | 'KR'
+  | 'JP'
+  | 'OCE'
+  | 'LAN'
+  | 'LAS'
+  | 'TR'
+  | 'RU'
+  | 'BR'
 
 /**
  * 0 — Custom games
