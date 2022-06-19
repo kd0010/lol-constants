@@ -12,7 +12,7 @@ export function generateItemsByName(): void {
     version: '',
   }
 
-  // Add all champions' data to each corresponding key value
+  // Add all items' data to each corresponding key value
   let itemKey: keyof typeof item.data
   for (itemKey in item.data) {
     const itemData = item.data[ itemKey ]

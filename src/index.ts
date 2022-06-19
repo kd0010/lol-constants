@@ -14,8 +14,18 @@ export { DDPaths } from './Constants/DDPaths'
 // # generated
 import _championByKey from './generated/championByKey.json'
 import _championByName from './generated/championByName.json'
+import _itemByKey from './generated/itemByKey.json'
+import _runesById from './generated/runesById.json'
+import _runesByName from './generated/runesByName.json'
+import _summonerByKey from './generated/summonerByKey.json'
+import _summonerByName from './generated/summonerByName.json'
 export const championByKey = _championByKey
 export const championByName = _championByName
+export const itemByKey = _itemByKey
+export const runesById = _runesById
+export const runesByName = _runesByName
+export const summonerByKey = _summonerByKey
+export const summonerByName = _summonerByName
 
 // # Helpers
 
