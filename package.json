@@ -1,7 +1,7 @@
 {
   "name": "lol-constants",
-  "version": "0.7.1",
-  "description": "League of Legends constants and data resources, such as champion, item, runes reforged, summoner.",
+  "version": "0.8.0",
+  "description": "League of Legends constants and data resources, such as champion, item, runes reforged, summoner spells.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",

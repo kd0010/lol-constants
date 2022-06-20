@@ -1,6 +1,6 @@
 import summonerByKey from '../generated/summonerByKey.json'
-import { SummonerKey } from '../types'
+import { SummonerSpellKey } from '../types'
 
-export const SummonerKeys: SummonerKey[] = (
+export const SummonerSpellKeys: SummonerSpellKey[] = (
   Object.keys(summonerByKey.data).map(key => key as keyof typeof summonerByKey.data)
 )

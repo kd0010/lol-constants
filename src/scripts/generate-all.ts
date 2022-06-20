@@ -3,8 +3,8 @@ import { generateChampionsByName } from '../Helpers/generateChampionsByName'
 import { generateItemsByName } from '../Helpers/generateItemsByName'
 import { generateRunesById } from '../Helpers/generateRunesById'
 import { generateRunesByName } from '../Helpers/generateRunesByName'
-import { generateSummonersByKey } from '../Helpers/generateSummonersByKey'
-import { generateSummonersByName } from '../Helpers/generateSummonersByName'
+import { generateSummonerSpellsByKey } from '../Helpers/generateSummonerSpellsByKey'
+import { generateSummonerSpellsByName } from '../Helpers/generateSummonerSpellsByName'
 
 const generateJSONs = () => {
   generateChampionsByKey()
@@ -12,8 +12,8 @@ const generateJSONs = () => {
   generateItemsByName()
   generateRunesById()
   generateRunesByName()
-  generateSummonersByKey()
-  generateSummonersByName()
+  generateSummonerSpellsByKey()
+  generateSummonerSpellsByName()
 }
 
 generateJSONs()

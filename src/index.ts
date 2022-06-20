@@ -17,9 +17,9 @@ export { ItemNames } from './Constants/ItemNames'
 export { RuneIds } from './Constants/RuneIds'
 export { RuneNames } from './Constants/RuneNames'
 export { StatRunes } from './Constants/StatRunes'
-export { SummonerIds } from './Constants/SummonerIds'
-export { SummonerKeys } from './Constants/SummonerKeys'
-export { SummonerNames } from './Constants/SummonerNames'
+export { SummonerSpellIds } from './Constants/SummonerSpellIds'
+export { SummonerSpellKeys } from './Constants/SummonerSpellKeys'
+export { SummonerSpellNames } from './Constants/SummonerSpellNames'
 
 // # generated
 import _championByKey from './generated/championByKey.json'
@@ -44,9 +44,9 @@ export { isItemKey } from './Helpers/isItemKey'
 export { isItemName } from './Helpers/isItemName'
 export { isRuneId } from './Helpers/isRuneId'
 export { isRuneName } from './Helpers/isRuneName'
-export { isSummonerId } from './Helpers/isSummonerId'
-export { isSummonerKey } from './Helpers/isSummonerKey'
-export { isSummonerName } from './Helpers/isSummonerName'
+export { isSummonerSpellId } from './Helpers/isSummonerSpellId'
+export { isSummonerSpellKey } from './Helpers/isSummonerSpellKey'
+export { isSummonerSpellName } from './Helpers/isSummonerSpellName'
 
 // # scripts
 

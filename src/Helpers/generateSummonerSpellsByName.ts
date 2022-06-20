@@ -1,8 +1,8 @@
 import fs from 'fs'
 import summoner from '../assets/summoner.json'
 
-export function generateSummonersByKey(): void {
-  const summonersByKey: {
+export function generateSummonerSpellsByName(): void {
+  const summonersByName: {
     data: {
       [k: string]: any
     }
@@ -12,21 +12,21 @@ export function generateSummonersByKey(): void {
     version: '',
   }
 
-  // Add all summoners' data to each corresponding key value
+  // Add all summoners' data to each corresponding name value
   let summonerId: keyof typeof summoner.data
   for (summonerId in summoner.data) {
     const summonerData = summoner.data[ summonerId ]
-    summonersByKey.data[ summonerData.key ] = {
+    summonersByName.data[ summonerData.name ] = {
       ...summonerData,
     }
   }
 
   // Add version to the product object
-  summonersByKey.version = summoner.version
+  summonersByName.version = summoner.version
 
   // Write to file
   fs.writeFileSync(
-    `src/generated/summonerByKey.json`,
-    JSON.stringify(summonersByKey),
+    `src/generated/summonerByName.json`,
+    JSON.stringify(summonersByName),
   )
 }

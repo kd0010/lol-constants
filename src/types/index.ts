@@ -13,9 +13,9 @@ export type ChampionKey = keyof typeof championByKey.data
 export type ChampionName = keyof typeof championByName.data
 export type ItemKey = keyof typeof item.data
 export type ItemName = keyof typeof itemByName.data
-export type SummonerId = keyof typeof summoner.data
-export type SummonerKey = keyof typeof summonerByKey.data
-export type SummonerName = keyof typeof summonerByName.data
+export type SummonerSpellId = keyof typeof summoner.data
+export type SummonerSpellKey = keyof typeof summonerByKey.data
+export type SummonerSpellName = keyof typeof summonerByName.data
 export type RuneId = keyof typeof runesById | keyof typeof StatRunes
 /**
  * Does not include stat runes,
