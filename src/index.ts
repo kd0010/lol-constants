@@ -38,6 +38,15 @@ export const summonerByKey = _summonerByKey
 export const summonerByName = _summonerByName
 
 // # Helpers
+export { isChampionKey } from './Helpers/isChampionKey'
+export { isChampionName } from './Helpers/isChampionName'
+export { isItemKey } from './Helpers/isItemKey'
+export { isItemName } from './Helpers/isItemName'
+export { isRuneId } from './Helpers/isRuneId'
+export { isRuneName } from './Helpers/isRuneName'
+export { isSummonerId } from './Helpers/isSummonerId'
+export { isSummonerKey } from './Helpers/isSummonerKey'
+export { isSummonerName } from './Helpers/isSummonerName'
 
 // # scripts
 
