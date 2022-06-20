@@ -2,7 +2,7 @@ import fs from 'fs'
 import item from '../assets/item.json'
 
 export function generateItemsByName(): void {
-  const itemsByKey: {
+  const itemByName: {
     data: {
       [k: string]: any
     }
@@ -12,23 +12,24 @@ export function generateItemsByName(): void {
     version: '',
   }
 
-  // Add all items' data to each corresponding key value
+  // Add all items' data to each corresponding name value
   let itemKey: keyof typeof item.data
   for (itemKey in item.data) {
     const itemData = item.data[ itemKey ]
-    itemsByKey.data[ itemData.name ] = {
+    itemByName.data[ itemData.name ] = {
       ...itemData,
       // Add the extra variable: `key`
+      // because it is esentially being overwritten.
       key: itemKey,
     }
   }
 
   // Add version to the product object
-  itemsByKey.version = item.version
+  itemByName.version = item.version
 
   // Write to file
   fs.writeFileSync(
-    `src/generated/itemByKey.json`,
-    JSON.stringify(itemsByKey),
+    `src/generated/itemByName.json`,
+    JSON.stringify(itemByName),
   )
 }

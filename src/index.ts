@@ -9,19 +9,29 @@ export const runesReforged = _runesReforged
 export const summoner = _summoner
 
 // # Constants
+export { ChampionKeys } from './Constants/ChampionKeys'
+export { ChampionNames } from './Constants/ChampionNames'
 export { DDPaths } from './Constants/DDPaths'
+export { ItemKeys } from './Constants/ItemKeys'
+export { ItemNames } from './Constants/ItemNames'
+export { RuneIds } from './Constants/RuneIds'
+export { RuneNames } from './Constants/RuneNames'
+export { StatRunes } from './Constants/StatRunes'
+export { SummonerIds } from './Constants/SummonerIds'
+export { SummonerKeys } from './Constants/SummonerKeys'
+export { SummonerNames } from './Constants/SummonerNames'
 
 // # generated
 import _championByKey from './generated/championByKey.json'
 import _championByName from './generated/championByName.json'
-import _itemByKey from './generated/itemByKey.json'
+import _itemByName from './generated/itemByName.json'
 import _runesById from './generated/runesById.json'
 import _runesByName from './generated/runesByName.json'
 import _summonerByKey from './generated/summonerByKey.json'
 import _summonerByName from './generated/summonerByName.json'
 export const championByKey = _championByKey
 export const championByName = _championByName
-export const itemByKey = _itemByKey
+export const itemByName = _itemByName
 export const runesById = _runesById
 export const runesByName = _runesByName
 export const summonerByKey = _summonerByKey
