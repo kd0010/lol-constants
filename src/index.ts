@@ -42,6 +42,14 @@ export const summonerByKey = _summonerByKey
 export const summonerByName = _summonerByName
 
 // # Helpers
+export { getChampionKeyByName } from './Helpers/getChampionKeyByName'
+export { getChampionNameByKey } from './Helpers/getChampionNameByKey'
+export { getItemKeyByName } from './Helpers/getItemKeyByName'
+export { getItemNameByKey } from './Helpers/getItemNameByKey'
+export { getRuneIdByName } from './Helpers/getRuneIdByName'
+export { getRuneNameById } from './Helpers/getRuneNameById'
+export { getSummonerSpellKeyByName } from './Helpers/getSummonerSpellKeyByName'
+export { getSummonerSpellNameByKey } from './Helpers/getSummonerSpellNameByKey'
 export { isChampionKey } from './Helpers/isChampionKey'
 export { isChampionName } from './Helpers/isChampionName'
 export { isItemKey } from './Helpers/isItemKey'
