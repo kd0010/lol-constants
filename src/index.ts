@@ -48,9 +48,13 @@ export { isItemKey } from './Helpers/isItemKey'
 export { isItemName } from './Helpers/isItemName'
 export { isRuneId } from './Helpers/isRuneId'
 export { isRuneName } from './Helpers/isRuneName'
+export { isStatRuneId } from './Helpers/isStatRuneId'
+export { isStatRuneName } from './Helpers/isStatRuneName'
 export { isSummonerSpellId } from './Helpers/isSummonerSpellId'
 export { isSummonerSpellKey } from './Helpers/isSummonerSpellKey'
 export { isSummonerSpellName } from './Helpers/isSummonerSpellName'
+export { isTreeRuneId } from './Helpers/isTreeRuneId'
+export { isTreeRuneName } from './Helpers/isTreeRuneName'
 
 // # scripts
 
