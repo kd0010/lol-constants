@@ -16,12 +16,30 @@ export type ItemName = keyof typeof itemByName.data
 export type SummonerSpellId = keyof typeof summoner.data
 export type SummonerSpellKey = keyof typeof summonerByKey.data
 export type SummonerSpellName = keyof typeof summonerByName.data
-export type RuneId = keyof typeof runesById | keyof typeof StatRunes
 /**
- * Does not include stat runes,
- * because their names are rather vague.
+ * There are three Rune ID types:
+ * `RuneId` (all),
+ * `TreeRuneId` (all but stat runes),
+ * `StatRuneId` (only stat runes).
  */
-export type RuneName = keyof typeof runesByName
+export type RuneId = TreeRuneId | StatRuneId
+export type RuneName = TreeRuneName | StatRuneName
+/**
+ * There are three Rune ID types:
+ * `RuneId` (all),
+ * `TreeRuneId` (all but stat runes),
+ * `StatRuneId` (only stat runes).
+ */
+export type TreeRuneId = keyof typeof runesById
+export type TreeRuneName = keyof typeof runesByName
+/**
+ * There are three Rune ID types:
+ * `RuneId` (all),
+ * `TreeRuneId` (all but stat runes),
+ * `StatRuneId` (only stat runes).
+ */
+export type StatRuneId = keyof typeof StatRunes
+export type StatRuneName = typeof StatRunes[ keyof typeof StatRunes ]
 export type XP = number
 export type Minute = number
 
