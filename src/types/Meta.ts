@@ -1,8 +1,14 @@
-export type TQueue =
+export type Role =
+  | 'NONE'
+  | 'SOLO'
+  | 'CARRY'
+  | 'SUPPORT'
+
+export type Queue =
   | 'RANKED_SOLO_5x5'
   | 'RANKED_FLEX_SR'
 
-export type TLeaguesTier =
+export type LeaguesTier =
   | 'CHALLENGER'
   | 'GRANDMASTER'
   | 'MASTER'
@@ -13,18 +19,18 @@ export type TLeaguesTier =
   | 'BRONZE'
   | 'IRON'
 
-export type TLeaguesRank =
+export type LeaguesRank =
   | 'I'
   | 'II'
   | 'III'
   | 'IV'
 
-export type TGameType =
+export type GameType =
   | 'CUSTOM_GAME'
   | 'TUTORIAL_GAME'
   | 'MATCHED_GAME'
 
-export type TGameMode =
+export type GameMode =
   | 'CLASSIC'
   | 'ARAM'
   | 'TUTORIAL'
@@ -126,7 +132,7 @@ export type ParticipantId =
   | 9
   | 10
 
-export type TWardType =
+export type WardType =
   | 'UNDEFINED'
   | 'YELLOW_TRINKET'
   | 'CONTROL_WARD'

@@ -8,6 +8,7 @@ import summonerByName from '../generated/summonerByName.json'
 import runesById from '../generated/runesById.json'
 import { StatRunes } from '../Constants/StatRunes'
 import runesByName from '../generated/runesByName.json'
+import { RuneSets } from '../Constants/RuneSets'
 
 export type ChampionKey = keyof typeof championByKey.data
 export type ChampionName = keyof typeof championByName.data
@@ -16,51 +17,168 @@ export type ItemName = keyof typeof itemByName.data
 export type SummonerSpellId = keyof typeof summoner.data
 export type SummonerSpellKey = keyof typeof summonerByKey.data
 export type SummonerSpellName = keyof typeof summonerByName.data
+
 /**
- * There are three Rune ID types:
- * `RuneId` (all),
- * `TreeRuneId` (all but stat runes),
- * `StatRuneId` (only stat runes).
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
  */
 export type RuneId = TreeRuneId | StatRuneId
 export type RuneName = TreeRuneName | StatRuneName
 /**
- * There are three Rune ID types:
- * `RuneId` (all),
- * `TreeRuneId` (all but stat runes),
- * `StatRuneId` (only stat runes).
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
  */
 export type TreeRuneId = keyof typeof runesById
 export type TreeRuneName = keyof typeof runesByName
 /**
- * There are three Rune ID types:
- * `RuneId` (all),
- * `TreeRuneId` (all but stat runes),
- * `StatRuneId` (only stat runes).
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
  */
 export type StatRuneId = keyof typeof StatRunes
 export type StatRuneName = typeof StatRunes[ keyof typeof StatRunes ]
+/**
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
+ */
+export type KeystoneRuneId = Extract<typeof RuneSets.Keystones[ keyof typeof RuneSets.Keystones ], string>
+/**
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
+ */
+export type PrecisionTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Precision[ keyof typeof RuneSets.PrimaryTrees.Precision ], string>
+/**
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
+ */
+export type DominationTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Domination[ keyof typeof RuneSets.PrimaryTrees.Domination ], string>
+/**
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
+ */
+export type SorceryTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Sorcery[ keyof typeof RuneSets.PrimaryTrees.Sorcery ], string>
+/**
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
+ */
+export type ResolveTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Resolve[ keyof typeof RuneSets.PrimaryTrees.Resolve ], string>
+/**
+ * There are 3 main Rune ID types:
+ * -  `RuneId` (all),
+ * -  `TreeRuneId` (all but stat runes),
+ * -  `StatRuneId` (only stat runes).
+ * 
+ * There are 6 more specific Rune ID types as well:
+ * -  `KeystoneRuneId`,
+ * -  `PrecisionTreeRuneId`,
+ * -  `DominationTreeRuneId`,
+ * -  `SorceryTreeRuneId`,
+ * -  `ResolveTreeRuneId`,
+ * -  `InspirationTreeRuneId`,
+ */
+export type InspirationTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Inspiration[ keyof typeof RuneSets.PrimaryTrees.Inspiration ], string>
+
 export type XP = number
 export type Minute = number
 
-export type TPosition =
+export type Position =
   | 'TOP'
   | 'JUNGLE'
   | 'MIDDLE'
   | 'BOTTOM'
   | 'UTILITY'
 
-export type TLane =
+export type Lane =
   | 'TOP'
   | 'JUNGLE'
   | 'MIDDLE'
   | 'BOTTOM'
 
-export type TRole =
-  | 'NONE'
-  | 'SOLO'
-  | 'CARRY'
-  | 'SUPPORT'
+export type RuneTreeName =
+  | 'Precision'
+  | 'Domination'
+  | 'Sorcery'
+  | 'Resolve'
+  | 'Inspiration'
 
 export type Level =
   | 1
