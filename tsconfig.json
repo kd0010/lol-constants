@@ -19,7 +19,6 @@
     "declaration": true,
     "noEmitOnError": true,
     "outDir": "./dist",
-    "removeComments": true,
     
     // ## Interop Constraints
     "esModuleInterop": true,
