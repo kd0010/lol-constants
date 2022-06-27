@@ -1,26 +1,26 @@
 import fs from 'fs'
-import champion from '../assets/champion.json'
+import champion from '../champion.json'
 import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
-  const championNames: {
-    [championKey: string]: string
+  const championKeys: {
+    [championId: string]: string
   } = {}
 
-  // Extract all champion names from `champion.json`
+  // Add all champions' data to each corresponding key value
   let championId: keyof typeof champion.data
   for (championId in champion.data) {
     const championData = champion.data[ championId ]
-    championNames[championData.key] = championData.name
+    championKeys[championId] = championData.key
   }
 
   // Write to file
-  const constName = 'ChampionNames'
+  const constName = 'ChampionKeys'
   fs.writeFileSync(
     `tmp/${constName}.ts`,
     getExportStatement(
       constName,
-      championNames,
+      championKeys,
     ),
   )
 })()

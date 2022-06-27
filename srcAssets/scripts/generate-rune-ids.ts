@@ -1,18 +1,18 @@
 import fs from 'fs'
-import runesReforged from '../assets/runesReforged.json'
-import { StatRunes } from '../assets/StatRunes'
+import runesReforged from '../runesReforged.json'
+import { StatRunes } from '../StatRunes'
 import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
-  const runeNames: {
-    [runeId: string]: any
+  const runeIds: {
+    [runeName: string]: any
   } = {}
 
   // Construct the new data and assign it to product object
   for (const runeTree of runesReforged) {
     for (const { runes } of runeTree.slots) {
       for (const rune of runes) {
-        runeNames[ rune.id ] = rune.name
+        runeIds[ rune.name ] = String(rune.id)
       }
     }
   }
@@ -21,16 +21,16 @@ import { getExportStatement } from './Helpers/getExportStatement'
   let statRuneId: keyof typeof StatRunes
   for (statRuneId in StatRunes) {
     const statRuneName = StatRunes[ statRuneId ]
-    runeNames[ statRuneId ] = statRuneName
+    runeIds[ statRuneName ] = statRuneId
   }
   
   // Write to file
-  const constName = 'RuneNames'
+  const constName = 'RuneIds'
   fs.writeFileSync(
     `tmp/${constName}.ts`,
     getExportStatement(
       constName,
-      runeNames,
+      runeIds,
     ),
   )
 })()

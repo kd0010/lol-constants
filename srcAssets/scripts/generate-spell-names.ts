@@ -1,5 +1,5 @@
 import fs from 'fs'
-import summoner from '../assets/summoner.json'
+import summoner from '../summoner.json'
 import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {

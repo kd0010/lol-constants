@@ -1,5 +1,5 @@
 import fs from 'fs'
-import item from '../assets/item.json'
+import item from '../item.json'
 import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {

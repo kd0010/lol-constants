@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { StatRunes } from '../assets/StatRunes'
+import { StatRunes } from '../StatRunes'
 import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {

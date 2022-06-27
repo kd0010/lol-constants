@@ -1,5 +1,5 @@
 import fs from 'fs'
-import runesReforged from '../assets/runesReforged.json'
+import runesReforged from '../runesReforged.json'
 import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
