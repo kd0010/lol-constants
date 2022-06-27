@@ -1,13 +1,14 @@
 // # assets
-import _champion from './assets/champion.json'
-import _item from './assets/item.json'
-import _runesReforged from './assets/runesReforged.json'
-import _summoner from './assets/summoner.json'
-export const champion = _champion
-export const item = _item
-export const runesReforged = _runesReforged
-export const summoner = _summoner
-export { StatRunes } from './assets/StatRunes'
+// TEMP
+// import _champion from './assets/champion.json'
+// import _item from './assets/item.json'
+// import _runesReforged from './assets/runesReforged.json'
+// import _summoner from './assets/summoner.json'
+// export const champion = _champion
+// export const item = _item
+// export const runesReforged = _runesReforged
+// export const summoner = _summoner
+// export { StatRunes } from './assets/StatRunes'
 
 // # Constants
 export { ChampionIds } from './Constants/ChampionIds'
