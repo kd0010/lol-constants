@@ -1,6 +1,5 @@
-node_modules
-dist
-# TEMP?
-assets
+node_modules/
+dist/
+assets/
+tmp/
 *.local
-tmp
