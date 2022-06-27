@@ -11,10 +11,7 @@
   ],
   "scripts": {
     "clean-build": "rmdir /s /q dist && tsc",
-    "publish-new-major": "tsc && npm version major && npm publish",
-    "publish-new-minor": "tsc && npm version minor && npm publish",
-    "publish-new-patch": "tsc && npm version patch && npm publish",
-    "generate": "node dist/scripts/generate-all"
+    "generate": "node assets/scripts/generate-all"
   },
   "devDependencies": {
     "@types/node": "^17.0.42"
