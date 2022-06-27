@@ -27,13 +27,13 @@ export { TreeRuneIds } from './Constants/TreeRuneIds'
 export { TreeRuneNames } from './Constants/TreeRuneNames'
 
 // # generated
-import _championByKey from './generated/championByKey.json'
-import _championByName from './generated/championByName.json'
-import _itemByName from './generated/itemByName.json'
-import _runesById from './generated/runesById.json'
-import _runesByName from './generated/runesByName.json'
-import _summonerByKey from './generated/summonerByKey.json'
-import _summonerByName from './generated/summonerByName.json'
+import _championByKey from './assets/generated/championByKey.json'
+import _championByName from './assets/generated/championByName.json'
+import _itemByName from './assets/generated/itemByName.json'
+import _runesById from './assets/generated/runesById.json'
+import _runesByName from './assets/generated/runesByName.json'
+import _summonerByKey from './assets/generated/summonerByKey.json'
+import _summonerByName from './assets/generated/summonerByName.json'
 export const championByKey = _championByKey
 export const championByName = _championByName
 export const itemByName = _itemByName

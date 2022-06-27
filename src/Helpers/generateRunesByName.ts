@@ -17,7 +17,7 @@ export function generateRunesByName(): void {
   
   // Write to file
   fs.writeFileSync(
-    `src/generated/runesByName.json`,
+    `src/assets/generated/runesByName.json`,
     JSON.stringify(runesByName),
   )
 }

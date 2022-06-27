@@ -29,7 +29,7 @@ export function generateItemsByName(): void {
 
   // Write to file
   fs.writeFileSync(
-    `src/generated/itemByName.json`,
+    `src/assets/generated/itemByName.json`,
     JSON.stringify(itemByName),
   )
 }

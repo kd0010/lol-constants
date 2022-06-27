@@ -1,4 +1,4 @@
-import runesById from '../generated/runesById.json'
+import runesById from '../assets/generated/runesById.json'
 import { TreeRuneId } from '../types'
 
 export const TreeRuneIds: TreeRuneId[] = (

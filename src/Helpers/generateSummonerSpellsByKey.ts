@@ -26,7 +26,7 @@ export function generateSummonerSpellsByKey(): void {
 
   // Write to file
   fs.writeFileSync(
-    `src/generated/summonerByKey.json`,
+    `src/assets/generated/summonerByKey.json`,
     JSON.stringify(summonersByKey),
   )
 }

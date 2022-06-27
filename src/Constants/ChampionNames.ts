@@ -1,4 +1,4 @@
-import championByName from '../generated/championByName.json'
+import championByName from '../assets/generated/championByName.json'
 import { ChampionName } from '../types'
 
 export const ChampionNames: ChampionName[] = (

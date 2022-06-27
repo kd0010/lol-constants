@@ -1,4 +1,4 @@
-import runesByName from '../generated/runesByName.json'
+import runesByName from '../assets/generated/runesByName.json'
 import { RuneId, RuneName, StatRuneId, TreeRuneId } from '../types'
 import { StatRunes } from '../Constants/StatRunes'
 import { isStatRuneName } from './isStatRuneName'

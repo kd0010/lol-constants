@@ -1,4 +1,4 @@
-import itemByName from '../generated/itemByName.json'
+import itemByName from '../assets/generated/itemByName.json'
 import { ItemKey, ItemName } from '../types'
 
 export function getItemKeyByName(name: ItemName): ItemKey {

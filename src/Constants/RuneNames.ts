@@ -1,4 +1,4 @@
-import runesByName from '../generated/runesByName.json'
+import runesByName from '../assets/generated/runesByName.json'
 import { RuneName } from '../types'
 
 export const RuneNames: RuneName[] = (

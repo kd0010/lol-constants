@@ -24,7 +24,7 @@ export function generateChampionsByName(): void {
 
   // Write to file
   fs.writeFileSync(
-    `src/generated/championByName.json`,
+    `src/assets/generated/championByName.json`,
     JSON.stringify(championsByName),
   )
 }

@@ -1,4 +1,4 @@
-import summonerByName from '../generated/summonerByName.json'
+import summonerByName from '../assets/generated/summonerByName.json'
 import { SummonerSpellKey, SummonerSpellName } from '../types'
 
 export function getSummonerSpellKeyByName(
