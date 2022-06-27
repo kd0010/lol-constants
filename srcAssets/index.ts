@@ -1,4 +1,4 @@
-// # assets
+// #
 import _champion from './champion.json'
 import _item from './item.json'
 import _runesReforged from './runesReforged.json'
