@@ -1,5 +1,6 @@
 import fs from 'fs'
 import { StatRunes } from '../assets/StatRunes'
+import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
   const runeIds: {
@@ -14,8 +15,12 @@ import { StatRunes } from '../assets/StatRunes'
   }
   
   // Write to file
+  const constName = 'StatRuneNames'
   fs.writeFileSync(
-    `tmp/statRuneNames.json`,
-    JSON.stringify(runeIds),
+    `tmp/${constName}.ts`,
+    getExportStatement(
+      constName,
+      runeIds,
+    ),
   )
 })()

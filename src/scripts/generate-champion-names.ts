@@ -1,5 +1,6 @@
 import fs from 'fs'
 import champion from '../assets/champion.json'
+import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
   const championNames: {
@@ -14,8 +15,12 @@ import champion from '../assets/champion.json'
   }
 
   // Write to file
+  const constName = 'ChampionNames'
   fs.writeFileSync(
-    `tmp/championNames.json`,
-    JSON.stringify(championNames),
+    `tmp/${constName}.ts`,
+    getExportStatement(
+      constName,
+      championNames,
+    ),
   )
 })()

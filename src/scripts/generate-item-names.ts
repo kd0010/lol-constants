@@ -1,5 +1,6 @@
 import fs from 'fs'
 import item from '../assets/item.json'
+import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
   const itemNames: {
@@ -15,8 +16,12 @@ import item from '../assets/item.json'
   }
 
   // Write to file
+  const constName = 'ItemNames'
   fs.writeFileSync(
-    `tmp/itemNames.json`,
-    JSON.stringify(itemNames),
+    `tmp/${constName}.ts`,
+    getExportStatement(
+      constName,
+      itemNames,
+    ),
   )
 })()

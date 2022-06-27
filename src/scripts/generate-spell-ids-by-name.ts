@@ -1,5 +1,6 @@
 import fs from 'fs'
 import summoner from '../assets/summoner.json'
+import { getExportStatement } from './Helpers/getExportStatement'
 
 (async () => {
   const spellIds: {
@@ -14,8 +15,12 @@ import summoner from '../assets/summoner.json'
   }
 
   // Write to file
+  const constName = 'SpellIdsByName'
   fs.writeFileSync(
-    `tmp/spellIdsByName.json`,
-    JSON.stringify(spellIds),
+    `tmp/${constName}.ts`,
+    getExportStatement(
+      constName,
+      spellIds,
+    ),
   )
 })()
