@@ -1,6 +1,6 @@
-import item from '../assets/item.json'
+import { ItemNames } from '../Constants/ItemNames'
 import { ItemKey, ItemName } from '../types'
 
 export function getItemNameByKey(key: ItemKey): ItemName {
-  return item.data[ key ].name as ItemName
+  return ItemNames[ key ]
 }

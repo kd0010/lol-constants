@@ -7,8 +7,11 @@ export const champion = _champion
 export const item = _item
 export const runesReforged = _runesReforged
 export const summoner = _summoner
+export { StatRunes } from './assets/StatRunes'
 
 // # Constants
+export { ChampionIds } from './Constants/ChampionIds'
+export { ChampionIdsByName } from './Constants/ChampionIdsByName'
 export { ChampionKeys } from './Constants/ChampionKeys'
 export { ChampionNames } from './Constants/ChampionNames'
 export { DDPaths } from './Constants/DDPaths'
@@ -17,55 +20,64 @@ export { ItemNames } from './Constants/ItemNames'
 export { RuneIds } from './Constants/RuneIds'
 export { RuneNames } from './Constants/RuneNames'
 export { RuneSets } from './Constants/RuneSets'
+export { SpellIds } from './Constants/SpellIds'
+export { SpellIdsByName } from './Constants/SpellIdsByName'
+export { SpellKeys } from './Constants/SpellKeys'
+export { SpellNames } from './Constants/SpellNames'
 export { StatRuneIds } from './Constants/StatRuneIds'
 export { StatRuneNames } from './Constants/StatRuneNames'
-export { StatRunes } from './Constants/StatRunes'
-export { SummonerSpellIds } from './Constants/SummonerSpellIds'
-export { SummonerSpellKeys } from './Constants/SummonerSpellKeys'
-export { SummonerSpellNames } from './Constants/SummonerSpellNames'
 export { TreeRuneIds } from './Constants/TreeRuneIds'
 export { TreeRuneNames } from './Constants/TreeRuneNames'
 
-// # generated
-import _championByKey from './assets/generated/championByKey.json'
-import _championByName from './assets/generated/championByName.json'
-import _itemByName from './assets/generated/itemByName.json'
-import _runesById from './assets/generated/runesById.json'
-import _runesByName from './assets/generated/runesByName.json'
-import _summonerByKey from './assets/generated/summonerByKey.json'
-import _summonerByName from './assets/generated/summonerByName.json'
-export const championByKey = _championByKey
-export const championByName = _championByName
-export const itemByName = _itemByName
-export const runesById = _runesById
-export const runesByName = _runesByName
-export const summonerByKey = _summonerByKey
-export const summonerByName = _summonerByName
-
 // # Helpers
+// ##
+export { getChampionIdByKey } from './Helpers/getChampionIdByKey'
+export { getChampionIdByName } from './Helpers/getChampionIdByName'
+export { getChampionKeyById } from './Helpers/getChampionKeyById'
 export { getChampionKeyByName } from './Helpers/getChampionKeyByName'
-export { getChampionNameByKey } from './Helpers/getChampionNameByKey'
+export { getChampionNameById } from './Helpers/getChampionNameById'
+// ##
 export { getItemKeyByName } from './Helpers/getItemKeyByName'
 export { getItemNameByKey } from './Helpers/getItemNameByKey'
+// ##
 export { getRuneIdByName } from './Helpers/getRuneIdByName'
 export { getRuneNameById } from './Helpers/getRuneNameById'
-export { getSummonerSpellKeyByName } from './Helpers/getSummonerSpellKeyByName'
-export { getSummonerSpellNameByKey } from './Helpers/getSummonerSpellNameByKey'
+// ##
+export { getSpellIdByKey } from './Helpers/getSpellIdByKey'
+export { getSpellIdByName } from './Helpers/getSpellIdByName'
+export { getSpellKeyById } from './Helpers/getSpellKeyById'
+export { getSpellKeyByName } from './Helpers/getSpellKeyByName'
+export { getSpellNameById } from './Helpers/getSpellNameById'
+export { getSpellNameByKey } from './Helpers/getSpellNameByKey'
+// ##
+export { getStatRuneIdByName } from './Helpers/getStatRuneIdByName'
+export { getStatRuneNameById } from './Helpers/getStatRuneNameById'
+// ##
+export { getTreeRuneIdByName } from './Helpers/getTreeRuneIdByName'
+export { getTreeRuneNameById } from './Helpers/getTreeRuneNameById'
+// ##
+export { isChampionId } from './Helpers/isChampionId'
 export { isChampionKey } from './Helpers/isChampionKey'
 export { isChampionName } from './Helpers/isChampionName'
+// ##
 export { isItemKey } from './Helpers/isItemKey'
 export { isItemName } from './Helpers/isItemName'
+// ##
 export { isRuneId } from './Helpers/isRuneId'
 export { isRuneName } from './Helpers/isRuneName'
+// ##
+export { isSpellId } from './Helpers/isSpellId'
+export { isSpellKey } from './Helpers/isSpellKey'
+export { isSpellName } from './Helpers/isSpellName'
+// ##
 export { isStatRuneId } from './Helpers/isStatRuneId'
 export { isStatRuneName } from './Helpers/isStatRuneName'
-export { isSummonerSpellId } from './Helpers/isSummonerSpellId'
-export { isSummonerSpellKey } from './Helpers/isSummonerSpellKey'
-export { isSummonerSpellName } from './Helpers/isSummonerSpellName'
+// ##
 export { isTreeRuneId } from './Helpers/isTreeRuneId'
 export { isTreeRuneName } from './Helpers/isTreeRuneName'
 
 // # scripts
+// —
 
 // # types
 export * from './types'

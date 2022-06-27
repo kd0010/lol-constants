@@ -1,7 +1,6 @@
-import { StatRuneNames } from '../Constants/StatRuneNames'
+import { StatRuneIds } from '../Constants/StatRuneIds'
 import { StatRuneName } from '../types'
 
-export function isStatRuneName(name: any): name is StatRuneName {
-  if (StatRuneNames.includes(name)) return true
-  return false
+export function isStatRuneName(name: string): name is StatRuneName {
+  return name in StatRuneIds
 }

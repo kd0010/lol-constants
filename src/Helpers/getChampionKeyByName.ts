@@ -1,6 +1,7 @@
-import championByName from '../generated/championByName.json'
+import { ChampionIdsByName } from '../Constants/ChampionIdsByName'
+import { ChampionKeys } from '../Constants/ChampionKeys'
 import { ChampionKey, ChampionName } from '../types'
 
 export function getChampionKeyByName(name: ChampionName): ChampionKey {
-  return championByName.data[ name ].key as ChampionKey
+  return ChampionKeys[ ChampionIdsByName[ name ] ]
 }

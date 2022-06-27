@@ -1,21 +1,16 @@
-import { generateChampionsByKey } from '../Helpers/generateChampionsByKey'
-import { generateChampionsByName } from '../Helpers/generateChampionsByName'
-import { generateItemsByName } from '../Helpers/generateItemsByName'
-import { generateRunesById } from '../Helpers/generateRunesById'
-import { generateRunesByName } from '../Helpers/generateRunesByName'
-import { generateSummonerSpellsByKey } from '../Helpers/generateSummonerSpellsByKey'
-import { generateSummonerSpellsByName } from '../Helpers/generateSummonerSpellsByName'
-
-const generateJSONs = () => {
-  generateChampionsByKey()
-  generateChampionsByName()
-  generateItemsByName()
-  generateRunesById()
-  generateRunesByName()
-  generateSummonerSpellsByKey()
-  generateSummonerSpellsByName()
-}
-
-generateJSONs()
-
-export {}
+import './generate-champion-ids-by-name'
+import './generate-champion-ids'
+import './generate-champion-keys'
+import './generate-champion-names'
+import './generate-item-keys'
+import './generate-item-names'
+import './generate-rune-ids'
+import './generate-rune-names'
+import './generate-spell-ids-by-name'
+import './generate-spell-ids'
+import './generate-spell-keys'
+import './generate-spell-names'
+import './generate-stat-rune-ids'
+import './generate-stat-rune-names'
+import './generate-tree-rune-ids'
+import './generate-tree-rune-names'

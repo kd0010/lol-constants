@@ -1,7 +1,6 @@
-import { ItemKeys } from '../Constants/ItemKeys'
+import { ItemNames } from '../Constants/ItemNames'
 import { ItemKey } from '../types'
 
-export function isItemKey(key: any): key is ItemKey {
-  if (ItemKeys.includes(key)) return true
-  return false
+export function isItemKey(key: string): key is ItemKey {
+  return key in ItemNames
 }

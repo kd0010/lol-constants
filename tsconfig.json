@@ -21,8 +21,7 @@
     "outDir": "./dist",
     
     // ## Interop Constraints
-    // Primarily, for `.json` files
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
 
     // ## Language and Environment

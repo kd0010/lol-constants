@@ -1,7 +1,6 @@
-import { ChampionNames } from '../Constants/ChampionNames'
+import { ChampionIdsByName } from '../Constants/ChampionIdsByName'
 import { ChampionName } from '../types'
 
-export function isChampionName(name: any): name is ChampionName {
-  if (ChampionNames.includes(name)) return true
-  return false
+export function isChampionName(name: string): name is ChampionName {
+  return name in ChampionIdsByName
 }

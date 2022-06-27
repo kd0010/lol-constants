@@ -1,7 +1,6 @@
-import { TreeRuneIds } from '../Constants/TreeRuneIds'
+import { TreeRuneNames } from '../Constants/TreeRuneNames'
 import { TreeRuneId } from '../types'
 
-export function isTreeRuneId(id: any): id is TreeRuneId {
-  if (TreeRuneIds.includes(id)) return true
-  return false
+export function isTreeRuneId(id: string): id is TreeRuneId {
+  return id in TreeRuneNames
 }

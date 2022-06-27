@@ -1,7 +1,6 @@
-import { RuneIds } from '../Constants/RuneIds'
+import { RuneNames } from '../Constants/RuneNames'
 import { RuneId } from '../types'
 
-export function isRuneId(id: any): id is RuneId {
-  if (RuneIds.includes(id)) return true
-  return false
+export function isRuneId(id: string): id is RuneId {
+  return id in RuneNames
 }

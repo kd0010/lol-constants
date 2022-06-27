@@ -1,22 +1,27 @@
-import championByKey from '../assets/generated/championByKey.json'
-import championByName from '../assets/generated/championByName.json'
-import item from '../assets/item.json'
-import itemByName from '../assets/generated/itemByName.json'
-import summoner from '../assets/summoner.json'
-import summonerByKey from '../assets/generated/summonerByKey.json'
-import summonerByName from '../assets/generated/summonerByName.json'
-import runesById from '../assets/generated/runesById.json'
-import { StatRunes } from '../Constants/StatRunes'
-import runesByName from '../assets/generated/runesByName.json'
 import { RuneSets } from '../Constants/RuneSets'
+import { ChampionIds } from '../Constants/ChampionIds'
+import { ChampionKeys } from '../Constants/ChampionKeys'
+import { ChampionNames } from '../Constants/ChampionNames'
+import { ItemKeys } from '../Constants/ItemKeys'
+import { ItemNames } from '../Constants/ItemNames'
+import { SpellIds } from '../Constants/SpellIds'
+import { SpellKeys } from '../Constants/SpellKeys'
+import { SpellNames } from '../Constants/SpellNames'
+import { RuneIds } from '../Constants/RuneIds'
+import { RuneNames } from '../Constants/RuneNames'
+import { StatRuneIds } from '../Constants/StatRuneIds'
+import { StatRuneNames } from '../Constants/StatRuneNames'
+import { TreeRuneIds } from '../Constants/TreeRuneIds'
+import { TreeRuneNames } from '../Constants/TreeRuneNames'
 
-export type ChampionKey = keyof typeof championByKey.data
-export type ChampionName = keyof typeof championByName.data
-export type ItemKey = keyof typeof item.data
-export type ItemName = keyof typeof itemByName.data
-export type SummonerSpellId = keyof typeof summoner.data
-export type SummonerSpellKey = keyof typeof summonerByKey.data
-export type SummonerSpellName = keyof typeof summonerByName.data
+export type ChampionId = typeof ChampionIds[ keyof typeof ChampionIds ]
+export type ChampionKey = typeof ChampionKeys[ keyof typeof ChampionKeys ]
+export type ChampionName = typeof ChampionNames[ keyof typeof ChampionNames ]
+export type ItemKey = typeof ItemKeys[ keyof typeof ItemKeys ]
+export type ItemName = typeof ItemNames[ keyof typeof ItemNames ]
+export type SpellId = typeof SpellIds[ keyof typeof SpellIds ]
+export type SpellKey = typeof SpellKeys[ keyof typeof SpellKeys ]
+export type SpellName = typeof SpellNames[ keyof typeof SpellNames ]
 
 /**
  * There are 3 main Rune ID types:
@@ -32,8 +37,8 @@ export type SummonerSpellName = keyof typeof summonerByName.data
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type RuneId = TreeRuneId | StatRuneId
-export type RuneName = TreeRuneName | StatRuneName
+export type RuneId = typeof RuneIds[ keyof typeof RuneIds ]
+export type RuneName = typeof RuneNames[ keyof typeof RuneNames ]
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -48,8 +53,8 @@ export type RuneName = TreeRuneName | StatRuneName
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type TreeRuneId = keyof typeof runesById
-export type TreeRuneName = keyof typeof runesByName
+export type TreeRuneId = typeof TreeRuneIds[ keyof typeof TreeRuneIds ]
+export type TreeRuneName = typeof TreeRuneNames[ keyof typeof TreeRuneNames ]
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -64,8 +69,8 @@ export type TreeRuneName = keyof typeof runesByName
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type StatRuneId = keyof typeof StatRunes
-export type StatRuneName = typeof StatRunes[ keyof typeof StatRunes ]
+export type StatRuneId = typeof StatRuneIds[ keyof typeof StatRuneIds ]
+export type StatRuneName = typeof StatRuneNames[ keyof typeof StatRuneNames ]
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),

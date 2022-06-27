@@ -1,0 +1,17 @@
+export const SpellIdsByName = {
+  'Barrier': 'SummonerBarrier',
+  'Cleanse': 'SummonerBoost',
+  'Ignite': 'SummonerDot',
+  'Exhaust': 'SummonerExhaust',
+  'Flash': 'SummonerFlash',
+  'Ghost': 'SummonerHaste',
+  'Heal': 'SummonerHeal',
+  'Clarity': 'SummonerMana',
+  'To the King!': 'SummonerPoroRecall',
+  'Poro Toss': 'SummonerPoroThrow',
+  'Smite': 'SummonerSmite',
+  'Mark': 'SummonerSnowball',
+  'Teleport': 'SummonerTeleport',
+  'Placeholder': 'Summoner_UltBookPlaceholder',
+  'Placeholder and Attack-Smite': 'Summoner_UltBookSmitePlaceholder',
+} as const

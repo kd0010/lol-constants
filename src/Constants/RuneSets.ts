@@ -1,4 +1,4 @@
-const PrimaryTrees = {
+export const PrimaryTrees = {
   /**
    * There are 13 Precision Runes in the game.
    */
@@ -88,7 +88,7 @@ const PrimaryTrees = {
   ],
 } as const
 
-const SecondaryTrees = {
+export const SecondaryTrees = {
   'Precision': [
     '9101',
     '9111',
@@ -177,7 +177,7 @@ export const Keystones = [
 /**
  * There are 9 Stat Runes in the game.
  */
-const StatRunes = [
+export const StatRunes = [
   '5001',
   '5002',
   '5002f',
@@ -189,7 +189,7 @@ const StatRunes = [
   '5008f',
 ] as const
 
-const All = [
+export const All = [
   ...PrimaryTrees.Precision,
   ...PrimaryTrees.Domination,
   ...PrimaryTrees.Sorcery,
