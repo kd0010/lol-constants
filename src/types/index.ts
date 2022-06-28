@@ -1,18 +1,18 @@
-import { RuneSets } from '../Constants/RuneSets'
-import { ChampionIds } from '../Constants/ChampionIds'
-import { ChampionKeys } from '../Constants/ChampionKeys'
-import { ChampionNames } from '../Constants/ChampionNames'
-import { ItemKeys } from '../Constants/ItemKeys'
-import { ItemNames } from '../Constants/ItemNames'
-import { SpellIds } from '../Constants/SpellIds'
-import { SpellKeys } from '../Constants/SpellKeys'
-import { SpellNames } from '../Constants/SpellNames'
-import { RuneIds } from '../Constants/RuneIds'
-import { RuneNames } from '../Constants/RuneNames'
-import { StatRuneIds } from '../Constants/StatRuneIds'
-import { StatRuneNames } from '../Constants/StatRuneNames'
-import { TreeRuneIds } from '../Constants/TreeRuneIds'
-import { TreeRuneNames } from '../Constants/TreeRuneNames'
+import { RuneSets } from '../Constants/Runes/RuneSets'
+import { ChampionIds } from '../Constants/Champions/ChampionIds'
+import { ChampionKeys } from '../Constants/Champions/ChampionKeys'
+import { ChampionNames } from '../Constants/Champions/ChampionNames'
+import { ItemKeys } from '../Constants/Items/ItemKeys'
+import { ItemNames } from '../Constants/Items/ItemNames'
+import { SpellIds } from '../Constants/Spells/SpellIds'
+import { SpellKeys } from '../Constants/Spells/SpellKeys'
+import { SpellNames } from '../Constants/Spells/SpellNames'
+import { RuneIds } from '../Constants/Runes/RuneIds'
+import { RuneNames } from '../Constants/Runes/RuneNames'
+import { StatRuneIds } from '../Constants/Runes/StatRuneIds'
+import { StatRuneNames } from '../Constants/Runes/StatRuneNames'
+import { TreeRuneIds } from '../Constants/Runes/TreeRuneIds'
+import { TreeRuneNames } from '../Constants/Runes/TreeRuneNames'
 
 export type ChampionId = typeof ChampionIds[ keyof typeof ChampionIds ]
 export type ChampionKey = typeof ChampionKeys[ keyof typeof ChampionKeys ]
@@ -85,7 +85,7 @@ export type StatRuneName = typeof StatRuneNames[ keyof typeof StatRuneNames ]
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type KeystoneRuneId = Extract<typeof RuneSets.Keystones[ keyof typeof RuneSets.Keystones ], string>
+export type KeystoneRuneId = keyof typeof RuneSets.Keystones
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -100,7 +100,7 @@ export type KeystoneRuneId = Extract<typeof RuneSets.Keystones[ keyof typeof Run
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type PrecisionTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Precision[ keyof typeof RuneSets.PrimaryTrees.Precision ], string>
+export type PrecisionTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Precision
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -115,7 +115,7 @@ export type PrecisionTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Precision
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type DominationTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Domination[ keyof typeof RuneSets.PrimaryTrees.Domination ], string>
+export type DominationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Domination
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -130,7 +130,7 @@ export type DominationTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Dominati
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type SorceryTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Sorcery[ keyof typeof RuneSets.PrimaryTrees.Sorcery ], string>
+export type SorceryTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Sorcery
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -145,7 +145,7 @@ export type SorceryTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Sorcery[ ke
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type ResolveTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Resolve[ keyof typeof RuneSets.PrimaryTrees.Resolve ], string>
+export type ResolveTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Resolve
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -160,7 +160,7 @@ export type ResolveTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Resolve[ ke
  * -  `ResolveTreeRuneId`,
  * -  `InspirationTreeRuneId`,
  */
-export type InspirationTreeRuneId = Extract<typeof RuneSets.PrimaryTrees.Inspiration[ keyof typeof RuneSets.PrimaryTrees.Inspiration ], string>
+export type InspirationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Inspiration
 
 export type XP = number
 export type Minute = number

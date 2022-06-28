@@ -1,6 +1,6 @@
 {
   "name": "lol-constants",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "League of Legends constants and data resources, such as champion, item, runes reforged, summoner spells.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "clean-build": "rmdir /s /q dist && tsc",
+    "clean-build-assets": "rmdir /s /q assets && cd srcAssets && tsc",
     "generate": "node assets/scripts/generate-all"
   },
   "devDependencies": {

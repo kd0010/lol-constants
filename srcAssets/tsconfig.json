@@ -18,7 +18,7 @@
     // ## Emit
     "declaration": true,
     "noEmitOnError": true,
-    "outDir": "./assets",
+    "outDir": "../assets",
     
     // ## Interop Constraints
     "esModuleInterop": true,
