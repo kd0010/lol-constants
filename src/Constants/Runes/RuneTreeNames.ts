@@ -1,7 +1,7 @@
 export const RuneTreeNames = {
-  'Precision': 'Precision',
-  'Domination': 'Domination',
-  'Sorcery': 'Sorcery',
-  'Resolve': 'Resolve',
-  'Inspiration': 'Inspiration',
+  '8000': 'Precision',
+  '8100': 'Domination',
+  '8200': 'Sorcery',
+  '8400': 'Resolve',
+  '8300': 'Inspiration',
 } as const

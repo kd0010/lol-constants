@@ -19,6 +19,7 @@ import { RuneTreeNames } from '../Constants/Runes/RuneTreeNames'
 import { RuneTreeTypes } from '../Constants/Runes/RuneTreeTypes'
 import { Levels } from '../Constants/Levels'
 import { Skills } from '../Constants/Skills'
+import { RuneTreeIds } from '../Constants/Runes/RuneTreeIds'
 
 export type ChampionId = typeof ChampionIds[ keyof typeof ChampionIds ]
 export type ChampionKey = typeof ChampionKeys[ keyof typeof ChampionKeys ]
@@ -168,7 +169,8 @@ export type ResolveTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Resolve
  */
 export type InspirationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Inspiration
 
-export type RuneTreeName = keyof typeof RuneTreeNames
+export type RuneTreeId = typeof RuneTreeIds[ keyof typeof RuneTreeIds ]
+export type RuneTreeName = typeof RuneTreeNames[ keyof typeof RuneTreeNames ]
 export type RuneTreeType = keyof typeof RuneTreeTypes
 
 export type Position = keyof typeof Positions
