@@ -1,3 +1,7 @@
+export type ChampionRelationType =
+  | 'Ally'
+  | 'Enemy'
+
 export type Role =
   | 'NONE'
   | 'SOLO'

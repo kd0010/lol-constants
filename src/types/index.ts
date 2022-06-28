@@ -13,6 +13,12 @@ import { StatRuneIds } from '../Constants/Runes/StatRuneIds'
 import { StatRuneNames } from '../Constants/Runes/StatRuneNames'
 import { TreeRuneIds } from '../Constants/Runes/TreeRuneIds'
 import { TreeRuneNames } from '../Constants/Runes/TreeRuneNames'
+import { Positions } from '../Constants/Positions'
+import { Lanes } from '../Constants/Lanes'
+import { RuneTreeNames } from '../Constants/Runes/RuneTreeNames'
+import { RuneTreeTypes } from '../Constants/Runes/RuneTreeTypes'
+import { Levels } from '../Constants/Levels'
+import { Skills } from '../Constants/Skills'
 
 export type ChampionId = typeof ChampionIds[ keyof typeof ChampionIds ]
 export type ChampionKey = typeof ChampionKeys[ keyof typeof ChampionKeys ]
@@ -162,51 +168,12 @@ export type ResolveTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Resolve
  */
 export type InspirationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Inspiration
 
+export type RuneTreeName = keyof typeof RuneTreeNames
+export type RuneTreeType = keyof typeof RuneTreeTypes
+
+export type Position = keyof typeof Positions
+export type Lane = keyof typeof Lanes
+export type Level = keyof typeof Levels
+export type Skill = keyof typeof Skills
 export type XP = number
 export type Minute = number
-
-export type Position =
-  | 'TOP'
-  | 'JUNGLE'
-  | 'MIDDLE'
-  | 'BOTTOM'
-  | 'UTILITY'
-
-export type Lane =
-  | 'TOP'
-  | 'JUNGLE'
-  | 'MIDDLE'
-  | 'BOTTOM'
-
-export type RuneTreeName =
-  | 'Precision'
-  | 'Domination'
-  | 'Sorcery'
-  | 'Resolve'
-  | 'Inspiration'
-
-export type Level =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | 10
-  | 11
-  | 12
-  | 13
-  | 14
-  | 15
-  | 16
-  | 17
-  | 18
-
-export type Skill =
-  | 'Q'
-  | 'W'
-  | 'E'
-  | 'R'
