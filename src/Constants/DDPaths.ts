@@ -1,5 +1,5 @@
 const version = '12.12.1'
-const base = `http://ddragon.leagueoflegends.com/cdn/${version}`
+const base = `https://ddragon.leagueoflegends.com/cdn/${version}`
 
 /**
  * DataDragon CDN Paths.
