@@ -3,13 +3,13 @@ import { StatRunes } from '../StatRunes'
 import { writeToTmpFile } from './Helpers/writeToTmpFile'
 
 (async () => {
-  const constant = 'RuneSets'
+  const constant = 'RuneSetsByRuneNames'
   const runeSets: {
     // Rune keys map onto Rune names
-    PrimaryTrees: {[runeTreeName: string]: {[runeId: string]: string}}
-    SecondaryTrees: {[runeTreeName: string]: {[runeId: string]: string}},
-    Keystones: {[runeId: string]: string},
-    StatRunes: {[runeId: string]: string},
+    PrimaryTrees: {[runeTreeName: string]: {[runeName: string]: string}}
+    SecondaryTrees: {[runeTreeName: string]: {[runeName: string]: string}},
+    Keystones: {[runeName: string]: string},
+    StatRunes: {[runeName: string]: string},
   } = {
     PrimaryTrees: {},
     SecondaryTrees: {},
@@ -35,19 +35,19 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
 
         // Add to PrimaryTrees
         if (!(runeTreeName in runeSets.PrimaryTrees)) runeSets.PrimaryTrees[runeTreeName] = {}
-        runeSets.PrimaryTrees[runeTreeName]![id] = runeName
+        runeSets.PrimaryTrees[runeTreeName]![runeName] = String(id)
 
         // Add to SecondaryTrees
         if (!(runeTreeName in runeSets.SecondaryTrees)) runeSets.SecondaryTrees[runeTreeName] = {}
         // But only if it isn't a keystone rune
         if (currentHSetIdx != keystoneHSetIdx) {
-          runeSets.SecondaryTrees[runeTreeName]![id] = runeName
+          runeSets.SecondaryTrees[runeTreeName]![runeName] = String(id)
         }
 
         // Add to Keystones
         // But only if it is a keystone rune
         if (currentHSetIdx == keystoneHSetIdx) {
-          runeSets.Keystones[id] = runeName
+          runeSets.Keystones[runeName] = String(id)
         }
       }
 
@@ -60,7 +60,7 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
     totalRuneAmt += 1
 
     // Add to StatRunes
-    runeSets.StatRunes[statRuneId] = StatRunes[ statRuneId ]
+    runeSets.StatRunes[StatRunes[ statRuneId ]] = statRuneId
   }
 
   // Write to file

@@ -20,6 +20,7 @@ import { RuneTreeTypes } from '../Constants/Runes/RuneTreeTypes'
 import { Levels } from '../Constants/Levels'
 import { Skills } from '../Constants/Skills'
 import { RuneTreeIds } from '../Constants/Runes/RuneTreeIds'
+import { RuneSetsByRuneNames } from '../Constants/Runes/RuneSetsByRuneNames'
 
 export type ChampionId = typeof ChampionIds[ keyof typeof ChampionIds ]
 export type ChampionKey = typeof ChampionKeys[ keyof typeof ChampionKeys ]
@@ -93,6 +94,7 @@ export type StatRuneName = typeof StatRuneNames[ keyof typeof StatRuneNames ]
  * -  `InspirationTreeRuneId`,
  */
 export type KeystoneRuneId = keyof typeof RuneSets.Keystones
+export type KeystoneRuneName = keyof typeof RuneSetsByRuneNames.Keystones
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -108,6 +110,7 @@ export type KeystoneRuneId = keyof typeof RuneSets.Keystones
  * -  `InspirationTreeRuneId`,
  */
 export type PrecisionTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Precision
+export type PrecisionTreeRuneName = keyof typeof RuneSetsByRuneNames.PrimaryTrees.Precision
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -123,6 +126,7 @@ export type PrecisionTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Precision
  * -  `InspirationTreeRuneId`,
  */
 export type DominationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Domination
+export type DominationTreeRuneName = keyof typeof RuneSetsByRuneNames.PrimaryTrees.Domination
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -138,6 +142,7 @@ export type DominationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Domination
  * -  `InspirationTreeRuneId`,
  */
 export type SorceryTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Sorcery
+export type SorceryTreeRuneName = keyof typeof RuneSetsByRuneNames.PrimaryTrees.Sorcery
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -153,6 +158,7 @@ export type SorceryTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Sorcery
  * -  `InspirationTreeRuneId`,
  */
 export type ResolveTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Resolve
+export type ResolveTreeRuneName = keyof typeof RuneSetsByRuneNames.PrimaryTrees.Resolve
 /**
  * There are 3 main Rune ID types:
  * -  `RuneId` (all),
@@ -168,10 +174,12 @@ export type ResolveTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Resolve
  * -  `InspirationTreeRuneId`,
  */
 export type InspirationTreeRuneId = keyof typeof RuneSets.PrimaryTrees.Inspiration
+export type InspirationTreeRuneName = keyof typeof RuneSetsByRuneNames.PrimaryTrees.Inspiration
 
 export type RuneTreeId = typeof RuneTreeIds[ keyof typeof RuneTreeIds ]
 export type RuneTreeName = typeof RuneTreeNames[ keyof typeof RuneTreeNames ]
 export type RuneTreeType = keyof typeof RuneTreeTypes
+export type StatRunesCategory = 'StatRunes'
 
 export type Position = keyof typeof Positions
 export type Lane = keyof typeof Lanes
