@@ -3,7 +3,7 @@ import { RuneName, RuneTreeName } from '../../types'
 /**
  * The file names themselves of runes,
  * according to https://raw.communitydragon.org.
- * The file names are excluding the extension (``).
+ * The file names are excluding the extension (`.png`).
  * 
  * @see https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/statmods/
  * @see https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perk-images/styles/

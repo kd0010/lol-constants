@@ -21,10 +21,33 @@ export function getRuneCDNURL(name: RuneName | RuneTreeName): string {
   if (isStatRuneName(name)) return `${base}/${RuneIconFileNames[ name ]}.png`
 
   // Finish for tree rune names
-  const category = getRuneCategoryByRuneName(name)
-  // Remove spaces
-  let runeTreeFolder = category.replaceAll(' ', '')
-  let runeFolder = name.replaceAll(' ', '')
+  let category = getRuneCategoryByRuneName(name)
+  // Remove spaces, colons, apostrophes and make lowercase
+  let runeTreeFolder = category.replaceAll(' ', '').toLowerCase()
+  let runeFolder = name.replaceAll(/[ :']/g, '').toLowerCase()
+
+  // Some runes, for whatever reason, are displaced and badly organized.
+  // Therefore we are going to add special cases to these runes.
+  switch (name) {
+    case 'Triumph':
+    case 'Overheal':
+      runeFolder = ''
+      break
+    case 'Last Stand':
+      runeTreeFolder = 'sorcery'
+      break
+    case 'Aftershock':
+      runeFolder = 'veteranaftershock'
+      break
+    case 'Shield Bash':
+      runeFolder = 'mirrorshell'
+      break
+    case 'Unflinching':
+      runeTreeFolder = 'sorcery'
+      break
+    case 'Approach Velocity':
+      runeTreeFolder = 'resolve'
+  }
 
   return `${base}/${runeTreeFolder}/${runeFolder}/${RuneIconFileNames[ name ]}.png`
 }
