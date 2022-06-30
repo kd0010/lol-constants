@@ -1,5 +1,5 @@
 import { PrimaryTrees } from '../../Constants/Runes/RuneSetsByRuneNames'
-import { StatRuneNames } from '../../Constants/Runes/StatRuneNames'
+import { StatRuneIds } from '../../Constants/Runes/StatRuneIds'
 import { RuneName, RuneTreeName, StatRunesCategory } from '../../types'
 
 /**
@@ -9,7 +9,7 @@ export function getRuneCategoryByRuneName(
   name: RuneName,
 ): RuneTreeName | StatRunesCategory {
   // Start with StatRunes because it is the tiniest of all
-  if (name in StatRuneNames) return 'StatRunes'
+  if (name in StatRuneIds) return 'StatRunes'
 
   // Continue on with the rest of the runes
   if (name in PrimaryTrees.Precision) return 'Precision'
