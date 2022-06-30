@@ -10,11 +10,17 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
     SecondaryTrees: {[runeTreeName: string]: {[runeId: string]: string}},
     Keystones: {[runeId: string]: string},
     StatRunes: {[runeId: string]: string},
+    // No HSets for now
+    // RunesByHSet: {[runeTreeName: string]: {[runeId: string]: string}[]},
+    // StatRunesByHSet: {[runeId: string]: string}[],
   } = {
     PrimaryTrees: {},
     SecondaryTrees: {},
     Keystones: {},
     StatRunes: {},
+    // No HSets for now
+    // RunesByHSet: {},
+    // StatRunesByHSet: [],
   }
 
   const keystoneHSetIdx = 0
@@ -49,18 +55,35 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         if (currentHSetIdx == keystoneHSetIdx) {
           runeSets.Keystones[id] = runeName
         }
+
+        // No HSets for now
+        // Add to RunesByHSet
+        // if (!(runeTreeName in runeSets.RunesByHSet)) runeSets.RunesByHSet[runeTreeName] = []
+        // if (!runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]) runeSets.RunesByHSet[runeTreeName]![currentHSetIdx] = {}
+        // runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]![id] = runeName
       }
 
       ++currentHSetIdx
     }
   }
-
+  
+  // No HSets for now
+  // let currentRuneIdx = 0
+  // let currentHSetIdx = 0
   let statRuneId: keyof typeof StatRunes
   for (statRuneId in StatRunes) {
     totalRuneAmt += 1
 
     // Add to StatRunes
     runeSets.StatRunes[statRuneId] = StatRunes[ statRuneId ]
+
+    // No HSets for now
+    // // Add to StatRunesByHSet
+    // if (!runeSets.StatRunesByHSet[currentHSetIdx]) runeSets.StatRunesByHSet[currentHSetIdx] = {}
+    // runeSets.StatRunesByHSet[currentHSetIdx]![statRuneId] = StatRunes[ statRuneId ]
+
+    // ++currentRuneIdx
+    // if (currentRuneIdx % 3 == 0) ++currentHSetIdx
   }
 
   // Write to file
@@ -94,6 +117,15 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
       },
       keysToSpread: [1, 2, 3, 4, 5, 6],
     },
+    // No HSets for now
+    // {
+    //   constName: 'RunesByHSet',
+    //   json: runeSets.RunesByHSet,
+    // },
+    // {
+    //   constName: 'StatRunesByHSet',
+    //   json: runeSets.StatRunesByHSet,
+    // },
     {
       constName: constant,
       comment: `Contains all Rune IDs that are known to man in the game of League of Legends. Sorted by various useful categories. There are a total of ${totalRuneAmt} runes in the game.`,
@@ -103,6 +135,9 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         'Keystones': 'Keystones',
         'StatRunes': 'StatRunes',
         'All': 'All',
+        // No HSets for now
+        // 'RunesByHSet': 'RunesByHSet',
+        // 'StatRunesByHSet': 'StatRunesByHSet',
       },
       keysToSpread: [
         'PrimaryTrees',
@@ -110,6 +145,9 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         'Keystones',
         'StatRunes',
         'All',
+        // No HSets for now
+        // 'RunesByHSet',
+        // 'StatRunesByHSet',
       ],
     },
   )
