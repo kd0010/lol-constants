@@ -10,15 +10,15 @@
  * Example:
  * `{"key":"...ConstantValue"} => {...ConstantValue}`
  */
-export function enableSpreadValues(
+export function enableEscapedValues(
   obj: {
     [k: string]: any
   },
-  keysToSpread: (string | number)[],
+  keysToEscape: (string | number)[],
 ): string {
   let json = JSON.stringify(obj)
 
-  for (let key of keysToSpread) {
+  for (let key of keysToEscape) {
     const stringifiedKey = `"${key}":`
     let stKeyIdx: number = json.indexOf(stringifiedKey)
 

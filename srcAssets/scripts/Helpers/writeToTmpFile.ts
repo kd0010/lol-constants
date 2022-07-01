@@ -9,7 +9,7 @@ export function writeToTmpFile(
     json: {
       [k: string]: any
     }
-    keysToSpread?: (string | number)[]
+    keysToEscape?: (string | number)[]
   }[]
 ): Promise<void> {
   return new Promise((res, rej) => {
@@ -19,11 +19,11 @@ export function writeToTmpFile(
         constName,
         comment,
         json,
-        keysToSpread,
+        keysToEscape,
       },
       i,
     ) => {
-      let exportStatement = getExportStatement(constName, json, keysToSpread, comment)
+      let exportStatement = getExportStatement(constName, json, keysToEscape, comment)
       return (
         finalSt
           + exportStatement

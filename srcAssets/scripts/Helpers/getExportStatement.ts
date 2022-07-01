@@ -1,4 +1,4 @@
-import { enableSpreadValues } from './enableSpreadValues'
+import { enableEscapedValues } from './enableEscapedValues'
 import { getFmtdComment } from './getFmtdComment'
 
 /**
@@ -9,11 +9,11 @@ export function getExportStatement(
   json: {
     [k: string]: any
   },
-  keysToSpread?: (string | number)[],
+  keysToEscape?: (string | number)[],
   comment?: string,
 ): string {
-  const stringifiedJson = keysToSpread
-    ? enableSpreadValues(json, keysToSpread)
+  const stringifiedJson = keysToEscape
+    ? enableEscapedValues(json, keysToEscape)
     : JSON.stringify(json)
   
   const fmtdComment = comment ? getFmtdComment(comment) : ''

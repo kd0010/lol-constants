@@ -4,11 +4,15 @@ export const SecondaryTrees = {"Domination":{"Cheap Shot":"8126","Taste of Blood
 
 export const Keystones = {"Electrocute":"8112","Predator":"8124","Dark Harvest":"8128","Hail of Blades":"9923","Glacial Augment":"8351","Unsealed Spellbook":"8360","First Strike":"8369","Press the Attack":"8005","Lethal Tempo":"8008","Fleet Footwork":"8021","Conqueror":"8010","Grasp of the Undying":"8437","Aftershock":"8439","Guardian":"8465","Summon Aery":"8214","Arcane Comet":"8229","Phase Rush":"8230"} as const
 
-export const StatRunes = {"Defense (HP)":"5001","Defense (AR)":"5002","Defense (MR)":"5003","Offense (AS)":"5005","Offense (AH)":"5007","Offense (AF)":"5008","Flex (AR)":"5002f","Flex (MR)":"5003f","Flex (AF)":"5008f"} as const
+export const StatRunes = {"Offense (AS)":"5005","Offense (AH)":"5007","Offense (AF)":"5008","Flex (AR)":"5002f","Flex (MR)":"5003f","Flex (AF)":"5008f","Defense (HP)":"5001","Defense (AR)":"5002","Defense (MR)":"5003"} as const
 
 export const All = {...PrimaryTrees.Precision,...PrimaryTrees.Domination,...PrimaryTrees.Sorcery,...PrimaryTrees.Resolve,...PrimaryTrees.Inspiration,...StatRunes} as const
+
+export const RunesByHSet = {"Domination":{"0":{"Electrocute":"8112","Predator":"8124","Dark Harvest":"8128","Hail of Blades":"9923"},"1":{"Cheap Shot":"8126","Taste of Blood":"8139","Sudden Impact":"8143"},"2":{"Zombie Ward":"8136","Ghost Poro":"8120","Eyeball Collection":"8138"},"3":{"Treasure Hunter":"8135","Ingenious Hunter":"8134","Relentless Hunter":"8105","Ultimate Hunter":"8106"}},"Inspiration":{"0":{"Glacial Augment":"8351","Unsealed Spellbook":"8360","First Strike":"8369"},"1":{"Hextech Flashtraption":"8306","Magical Footwear":"8304","Perfect Timing":"8313"},"2":{"Future's Market":"8321","Minion Dematerializer":"8316","Biscuit Delivery":"8345"},"3":{"Cosmic Insight":"8347","Approach Velocity":"8410","Time Warp Tonic":"8352"}},"Precision":{"0":{"Press the Attack":"8005","Lethal Tempo":"8008","Fleet Footwork":"8021","Conqueror":"8010"},"1":{"Overheal":"9101","Triumph":"9111","Presence of Mind":"8009"},"2":{"Legend: Alacrity":"9104","Legend: Tenacity":"9105","Legend: Bloodline":"9103"},"3":{"Coup de Grace":"8014","Cut Down":"8017","Last Stand":"8299"}},"Resolve":{"0":{"Grasp of the Undying":"8437","Aftershock":"8439","Guardian":"8465"},"1":{"Demolish":"8446","Font of Life":"8463","Shield Bash":"8401"},"2":{"Conditioning":"8429","Second Wind":"8444","Bone Plating":"8473"},"3":{"Overgrowth":"8451","Revitalize":"8453","Unflinching":"8242"}},"Sorcery":{"0":{"Summon Aery":"8214","Arcane Comet":"8229","Phase Rush":"8230"},"1":{"Nullifying Orb":"8224","Manaflow Band":"8226","Nimbus Cloak":"8275"},"2":{"Transcendence":"8210","Celerity":"8234","Absolute Focus":"8233"},"3":{"Scorch":"8237","Waterwalking":"8232","Gathering Storm":"8236"}}} as const
+
+export const StatRunesByHSet = {"0":{"Offense (AS)":"5005","Offense (AH)":"5007","Offense (AF)":"5008"},"1":{"Flex (AR)":"5002f","Flex (MR)":"5003f","Flex (AF)":"5008f"},"2":{"Defense (HP)":"5001","Defense (AR)":"5002","Defense (MR)":"5003"}} as const
 
 /**
  * Contains all Rune IDs that are known to man in the game of League of Legends. Sorted by various useful categories. There are a total of 72 runes in the game.
  */
-export const RuneSetsByRuneNames = {PrimaryTrees,SecondaryTrees,Keystones,StatRunes,All} as const
+export const RuneSetsByRuneNames = {PrimaryTrees,SecondaryTrees,Keystones,StatRunes,All,RunesByHSet,StatRunesByHSet} as const

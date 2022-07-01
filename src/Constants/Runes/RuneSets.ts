@@ -8,7 +8,11 @@ export const StatRunes = {"5001":"Defense (HP)","5002":"Defense (AR)","5003":"De
 
 export const All = {...PrimaryTrees.Precision,...PrimaryTrees.Domination,...PrimaryTrees.Sorcery,...PrimaryTrees.Resolve,...PrimaryTrees.Inspiration,...StatRunes} as const
 
+export const RunesByHSet = {"Domination":{"0":{"8112":"Electrocute","8124":"Predator","8128":"Dark Harvest","9923":"Hail of Blades"},"1":{"8126":"Cheap Shot","8139":"Taste of Blood","8143":"Sudden Impact"},"2":{"8120":"Ghost Poro","8136":"Zombie Ward","8138":"Eyeball Collection"},"3":{"8105":"Relentless Hunter","8106":"Ultimate Hunter","8134":"Ingenious Hunter","8135":"Treasure Hunter"}},"Inspiration":{"0":{"8351":"Glacial Augment","8360":"Unsealed Spellbook","8369":"First Strike"},"1":{"8304":"Magical Footwear","8306":"Hextech Flashtraption","8313":"Perfect Timing"},"2":{"8316":"Minion Dematerializer","8321":"Future's Market","8345":"Biscuit Delivery"},"3":{"8347":"Cosmic Insight","8352":"Time Warp Tonic","8410":"Approach Velocity"}},"Precision":{"0":{"8005":"Press the Attack","8008":"Lethal Tempo","8010":"Conqueror","8021":"Fleet Footwork"},"1":{"8009":"Presence of Mind","9101":"Overheal","9111":"Triumph"},"2":{"9103":"Legend: Bloodline","9104":"Legend: Alacrity","9105":"Legend: Tenacity"},"3":{"8014":"Coup de Grace","8017":"Cut Down","8299":"Last Stand"}},"Resolve":{"0":{"8437":"Grasp of the Undying","8439":"Aftershock","8465":"Guardian"},"1":{"8401":"Shield Bash","8446":"Demolish","8463":"Font of Life"},"2":{"8429":"Conditioning","8444":"Second Wind","8473":"Bone Plating"},"3":{"8242":"Unflinching","8451":"Overgrowth","8453":"Revitalize"}},"Sorcery":{"0":{"8214":"Summon Aery","8229":"Arcane Comet","8230":"Phase Rush"},"1":{"8224":"Nullifying Orb","8226":"Manaflow Band","8275":"Nimbus Cloak"},"2":{"8210":"Transcendence","8233":"Absolute Focus","8234":"Celerity"},"3":{"8232":"Waterwalking","8236":"Gathering Storm","8237":"Scorch"}}} as const
+
+export const StatRunesByHSet = {"0":{"5005":"Offense (AS)","5007":"Offense (AH)","5008":"Offense (AF)"},"1":{"5002f":"Flex (AR)","5003f":"Flex (MR)","5008f":"Flex (AF)"},"2":{"5001":"Defense (HP)","5002":"Defense (AR)","5003":"Defense (MR)"}} as const
+
 /**
  * Contains all Rune IDs that are known to man in the game of League of Legends. Sorted by various useful categories. There are a total of 72 runes in the game.
  */
-export const RuneSets = {PrimaryTrees,SecondaryTrees,Keystones,StatRunes,All} as const
+export const RuneSets = {PrimaryTrees,SecondaryTrees,Keystones,StatRunes,All,RunesByHSet,StatRunesByHSet} as const

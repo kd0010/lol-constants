@@ -1,20 +1,24 @@
 import runesReforged from '../runesReforged.json'
 import { StatRunes } from '../StatRunes'
+import { StatRunesV2 } from '../StatRunesV2'
 import { writeToTmpFile } from './Helpers/writeToTmpFile'
 
 (async () => {
   const constant = 'RuneSetsByRuneNames'
   const runeSets: {
-    // Rune keys map onto Rune names
     PrimaryTrees: {[runeTreeName: string]: {[runeName: string]: string}}
     SecondaryTrees: {[runeTreeName: string]: {[runeName: string]: string}},
     Keystones: {[runeName: string]: string},
     StatRunes: {[runeName: string]: string},
+    RunesByHSet: {[runeTreeName: string]: {[hSetRow: string]: {[runeName: string]: string}}},
+    StatRunesByHSet: {[hSetRow: string]: {[runeName: string]: string}},
   } = {
     PrimaryTrees: {},
     SecondaryTrees: {},
     Keystones: {},
     StatRunes: {},
+    RunesByHSet: {},
+    StatRunesByHSet: {},
   }
 
   const keystoneHSetIdx = 0
@@ -49,18 +53,30 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         if (currentHSetIdx == keystoneHSetIdx) {
           runeSets.Keystones[runeName] = String(id)
         }
+
+        // Add to RunesByHSet
+        if (!(runeTreeName in runeSets.RunesByHSet)) runeSets.RunesByHSet[runeTreeName] = {}
+        if (!runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]) runeSets.RunesByHSet[runeTreeName]![currentHSetIdx] = {}
+        runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]![runeName] = String(id)
       }
 
       ++currentHSetIdx
     }
   }
 
-  let statRuneId: keyof typeof StatRunes
-  for (statRuneId in StatRunes) {
-    totalRuneAmt += 1
+  for (let hSetIdx in StatRunesV2) {
+    const hSetRunes = StatRunesV2[hSetIdx as unknown as 0 | 1 | 2]
+    for (let [statRuneId, statRuneName] of Object.entries(hSetRunes)) {
+      // Keep track
+      totalRuneAmt += 1
 
-    // Add to StatRunes
-    runeSets.StatRunes[StatRunes[ statRuneId ]] = statRuneId
+      // Add to StatRunes
+      runeSets.StatRunes[statRuneName] = statRuneId
+
+      // Add to StatRunesByHSet
+      if (!(hSetIdx in runeSets.StatRunesByHSet)) runeSets.StatRunesByHSet[hSetIdx] = {}
+      runeSets.StatRunesByHSet[hSetIdx]![statRuneName] = statRuneId
+    }
   }
 
   // Write to file
@@ -92,7 +108,15 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         5: '...PrimaryTrees.Inspiration',
         6: '...StatRunes',
       },
-      keysToSpread: [1, 2, 3, 4, 5, 6],
+      keysToEscape: [1, 2, 3, 4, 5, 6],
+    },
+    {
+      constName: 'RunesByHSet',
+      json: runeSets.RunesByHSet,
+    },
+    {
+      constName: 'StatRunesByHSet',
+      json: runeSets.StatRunesByHSet,
     },
     {
       constName: constant,
@@ -103,13 +127,17 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         'Keystones': 'Keystones',
         'StatRunes': 'StatRunes',
         'All': 'All',
+        'RunesByHSet': 'RunesByHSet',
+        'StatRunesByHSet': 'StatRunesByHSet',
       },
-      keysToSpread: [
+      keysToEscape: [
         'PrimaryTrees',
         'SecondaryTrees',
         'Keystones',
         'StatRunes',
         'All',
+        'RunesByHSet',
+        'StatRunesByHSet',
       ],
     },
   )

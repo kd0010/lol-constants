@@ -1,26 +1,23 @@
 import runesReforged from '../runesReforged.json'
-import { StatRunes } from '../StatRunes'
+import { StatRunesV2 } from '../StatRunesV2'
 import { writeToTmpFile } from './Helpers/writeToTmpFile'
 
 (async () => {
   const constant = 'RuneSets'
   const runeSets: {
-    // Rune keys map onto Rune names
     PrimaryTrees: {[runeTreeName: string]: {[runeId: string]: string}}
     SecondaryTrees: {[runeTreeName: string]: {[runeId: string]: string}},
     Keystones: {[runeId: string]: string},
     StatRunes: {[runeId: string]: string},
-    // No HSets for now
-    // RunesByHSet: {[runeTreeName: string]: {[runeId: string]: string}[]},
-    // StatRunesByHSet: {[runeId: string]: string}[],
+    RunesByHSet: {[runeTreeName: string]: {[hSetRow: string]: {[runeId: string]: string}}},
+    StatRunesByHSet: {[hSetRow: string]: {[runeId: string]: string}},
   } = {
     PrimaryTrees: {},
     SecondaryTrees: {},
     Keystones: {},
     StatRunes: {},
-    // No HSets for now
-    // RunesByHSet: {},
-    // StatRunesByHSet: [],
+    RunesByHSet: {},
+    StatRunesByHSet: {},
   }
 
   const keystoneHSetIdx = 0
@@ -56,34 +53,29 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
           runeSets.Keystones[id] = runeName
         }
 
-        // No HSets for now
         // Add to RunesByHSet
-        // if (!(runeTreeName in runeSets.RunesByHSet)) runeSets.RunesByHSet[runeTreeName] = []
-        // if (!runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]) runeSets.RunesByHSet[runeTreeName]![currentHSetIdx] = {}
-        // runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]![id] = runeName
+        if (!(runeTreeName in runeSets.RunesByHSet)) runeSets.RunesByHSet[runeTreeName] = {}
+        if (!runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]) runeSets.RunesByHSet[runeTreeName]![currentHSetIdx] = {}
+        runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]![id] = runeName
       }
 
       ++currentHSetIdx
     }
   }
-  
-  // No HSets for now
-  // let currentRuneIdx = 0
-  // let currentHSetIdx = 0
-  let statRuneId: keyof typeof StatRunes
-  for (statRuneId in StatRunes) {
-    totalRuneAmt += 1
 
-    // Add to StatRunes
-    runeSets.StatRunes[statRuneId] = StatRunes[ statRuneId ]
+  for (let hSetIdx in StatRunesV2) {
+    const hSetRunes = StatRunesV2[hSetIdx as unknown as 0 | 1 | 2]
+    for (let [statRuneId, statRuneName] of Object.entries(hSetRunes)) {
+      // Keep track
+      totalRuneAmt += 1
 
-    // No HSets for now
-    // // Add to StatRunesByHSet
-    // if (!runeSets.StatRunesByHSet[currentHSetIdx]) runeSets.StatRunesByHSet[currentHSetIdx] = {}
-    // runeSets.StatRunesByHSet[currentHSetIdx]![statRuneId] = StatRunes[ statRuneId ]
+      // Add to StatRunes
+      runeSets.StatRunes[statRuneId] = statRuneName
 
-    // ++currentRuneIdx
-    // if (currentRuneIdx % 3 == 0) ++currentHSetIdx
+      // Add to StatRunesByHSet
+      if (!(hSetIdx in runeSets.StatRunesByHSet)) runeSets.StatRunesByHSet[hSetIdx] = {}
+      runeSets.StatRunesByHSet[hSetIdx]![statRuneId] = statRuneName
+    }
   }
 
   // Write to file
@@ -115,17 +107,16 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         5: '...PrimaryTrees.Inspiration',
         6: '...StatRunes',
       },
-      keysToSpread: [1, 2, 3, 4, 5, 6],
+      keysToEscape: [1, 2, 3, 4, 5, 6],
     },
-    // No HSets for now
-    // {
-    //   constName: 'RunesByHSet',
-    //   json: runeSets.RunesByHSet,
-    // },
-    // {
-    //   constName: 'StatRunesByHSet',
-    //   json: runeSets.StatRunesByHSet,
-    // },
+    {
+      constName: 'RunesByHSet',
+      json: runeSets.RunesByHSet,
+    },
+    {
+      constName: 'StatRunesByHSet',
+      json: runeSets.StatRunesByHSet,
+    },
     {
       constName: constant,
       comment: `Contains all Rune IDs that are known to man in the game of League of Legends. Sorted by various useful categories. There are a total of ${totalRuneAmt} runes in the game.`,
@@ -135,19 +126,17 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
         'Keystones': 'Keystones',
         'StatRunes': 'StatRunes',
         'All': 'All',
-        // No HSets for now
-        // 'RunesByHSet': 'RunesByHSet',
-        // 'StatRunesByHSet': 'StatRunesByHSet',
+        'RunesByHSet': 'RunesByHSet',
+        'StatRunesByHSet': 'StatRunesByHSet',
       },
-      keysToSpread: [
+      keysToEscape: [
         'PrimaryTrees',
         'SecondaryTrees',
         'Keystones',
         'StatRunes',
         'All',
-        // No HSets for now
-        // 'RunesByHSet',
-        // 'StatRunesByHSet',
+        'RunesByHSet',
+        'StatRunesByHSet',
       ],
     },
   )
