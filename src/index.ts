@@ -61,6 +61,8 @@ export { getRuneCategoryByRuneName } from './Helpers/Runes/getRuneCategoryByRune
 export { getRuneCDNURL } from './Helpers/Runes/getRuneCDNURL'
 export { getRuneIdByName } from './Helpers/Runes/getRuneIdByName'
 export { getRuneNameById } from './Helpers/Runes/getRuneNameById'
+export { getRuneTreeIdByName } from './Helpers/Runes/getRuneTreeIdByName'
+export { getRuneTreeNameById } from './Helpers/Runes/getRuneTreeNameById'
 export { getStatRuneIdByName } from './Helpers/Runes/getStatRuneIdByName'
 export { getStatRuneNameById } from './Helpers/Runes/getStatRuneNameById'
 export { getTreeRuneIdByName } from './Helpers/Runes/getTreeRuneIdByName'
