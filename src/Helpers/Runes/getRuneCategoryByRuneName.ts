@@ -1,5 +1,4 @@
-import { PrimaryTrees } from '../../Constants/Runes/RuneSetsByRuneNames'
-import { StatRuneIds } from '../../Constants/Runes/StatRuneIds'
+import { PrimaryRuneTrees, StatRuneIds } from '../../Constants/Runes/RuneSetsByRuneNames'
 import { RuneName, RuneTreeName, StatRunesCategory } from '../../types'
 
 /**
@@ -12,11 +11,11 @@ export function getRuneCategoryByRuneName(
   if (name in StatRuneIds) return 'StatRunes'
 
   // Continue on with the rest of the runes
-  if (name in PrimaryTrees.Precision) return 'Precision'
-  if (name in PrimaryTrees.Domination) return 'Domination'
-  if (name in PrimaryTrees.Sorcery) return 'Sorcery'
-  if (name in PrimaryTrees.Resolve) return 'Resolve'
-  if (name in PrimaryTrees.Inspiration) return 'Inspiration'
+  if (name in PrimaryRuneTrees.Precision) return 'Precision'
+  if (name in PrimaryRuneTrees.Domination) return 'Domination'
+  if (name in PrimaryRuneTrees.Sorcery) return 'Sorcery'
+  if (name in PrimaryRuneTrees.Resolve) return 'Resolve'
+  if (name in PrimaryRuneTrees.Inspiration) return 'Inspiration'
 
   // Note: It should be impossible to reach code this far
   //       so long as constants are not missing any values,

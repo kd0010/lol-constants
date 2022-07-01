@@ -1,1 +1,0 @@
-export const StatRuneIds = {"Defense (HP)":"5001","Defense (AR)":"5002","Defense (MR)":"5003","Offense (AS)":"5005","Offense (AH)":"5007","Offense (AF)":"5008","Flex (AR)":"5002f","Flex (MR)":"5003f","Flex (AF)":"5008f"} as const

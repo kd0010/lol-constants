@@ -1,24 +1,23 @@
 import runesReforged from '../runesReforged.json'
-import { StatRunes } from '../StatRunes'
 import { StatRunesV2 } from '../StatRunesV2'
 import { writeToTmpFile } from './Helpers/writeToTmpFile'
 
 (async () => {
   const constant = 'RuneSetsByRuneNames'
   const runeSets: {
-    PrimaryTrees: {[runeTreeName: string]: {[runeName: string]: string}}
-    SecondaryTrees: {[runeTreeName: string]: {[runeName: string]: string}},
-    Keystones: {[runeName: string]: string},
-    StatRunes: {[runeName: string]: string},
-    RunesByHSet: {[runeTreeName: string]: {[hSetRow: string]: {[runeName: string]: string}}},
-    StatRunesByHSet: {[hSetRow: string]: {[runeName: string]: string}},
+    PrimaryRuneTrees: {[runeTreeName: string]: {[runeName: string]: string}}
+    SecondaryRuneTrees: {[runeTreeName: string]: {[runeName: string]: string}},
+    KeystoneIds: {[runeName: string]: string},
+    StatRuneIds: {[runeName: string]: string},
+    RuneTreeHSets: {[runeTreeName: string]: {[hSetRow: string]: {[runeName: string]: string}}},
+    StatRuneHSets: {[hSetRow: string]: {[runeName: string]: string}},
   } = {
-    PrimaryTrees: {},
-    SecondaryTrees: {},
-    Keystones: {},
-    StatRunes: {},
-    RunesByHSet: {},
-    StatRunesByHSet: {},
+    PrimaryRuneTrees: {},
+    SecondaryRuneTrees: {},
+    KeystoneIds: {},
+    StatRuneIds: {},
+    RuneTreeHSets: {},
+    StatRuneHSets: {},
   }
 
   const keystoneHSetIdx = 0
@@ -37,27 +36,27 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
       } of runes) {
         totalRuneAmt += 1
 
-        // Add to PrimaryTrees
-        if (!(runeTreeName in runeSets.PrimaryTrees)) runeSets.PrimaryTrees[runeTreeName] = {}
-        runeSets.PrimaryTrees[runeTreeName]![runeName] = String(id)
+        // Add to PrimaryRuneTrees
+        if (!(runeTreeName in runeSets.PrimaryRuneTrees)) runeSets.PrimaryRuneTrees[runeTreeName] = {}
+        runeSets.PrimaryRuneTrees[runeTreeName]![runeName] = String(id)
 
-        // Add to SecondaryTrees
-        if (!(runeTreeName in runeSets.SecondaryTrees)) runeSets.SecondaryTrees[runeTreeName] = {}
+        // Add to SecondaryRuneTrees
+        if (!(runeTreeName in runeSets.SecondaryRuneTrees)) runeSets.SecondaryRuneTrees[runeTreeName] = {}
         // But only if it isn't a keystone rune
         if (currentHSetIdx != keystoneHSetIdx) {
-          runeSets.SecondaryTrees[runeTreeName]![runeName] = String(id)
+          runeSets.SecondaryRuneTrees[runeTreeName]![runeName] = String(id)
         }
 
-        // Add to Keystones
+        // Add to KeystoneIds
         // But only if it is a keystone rune
         if (currentHSetIdx == keystoneHSetIdx) {
-          runeSets.Keystones[runeName] = String(id)
+          runeSets.KeystoneIds[runeName] = String(id)
         }
 
-        // Add to RunesByHSet
-        if (!(runeTreeName in runeSets.RunesByHSet)) runeSets.RunesByHSet[runeTreeName] = {}
-        if (!runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]) runeSets.RunesByHSet[runeTreeName]![currentHSetIdx] = {}
-        runeSets.RunesByHSet[runeTreeName]![currentHSetIdx]![runeName] = String(id)
+        // Add to RuneTreeHSets
+        if (!(runeTreeName in runeSets.RuneTreeHSets)) runeSets.RuneTreeHSets[runeTreeName] = {}
+        if (!runeSets.RuneTreeHSets[runeTreeName]![currentHSetIdx]) runeSets.RuneTreeHSets[runeTreeName]![currentHSetIdx] = {}
+        runeSets.RuneTreeHSets[runeTreeName]![currentHSetIdx]![runeName] = String(id)
       }
 
       ++currentHSetIdx
@@ -70,12 +69,12 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
       // Keep track
       totalRuneAmt += 1
 
-      // Add to StatRunes
-      runeSets.StatRunes[statRuneName] = statRuneId
+      // Add to StatRuneIds
+      runeSets.StatRuneIds[statRuneName] = statRuneId
 
-      // Add to StatRunesByHSet
-      if (!(hSetIdx in runeSets.StatRunesByHSet)) runeSets.StatRunesByHSet[hSetIdx] = {}
-      runeSets.StatRunesByHSet[hSetIdx]![statRuneName] = statRuneId
+      // Add to StatRuneHSets
+      if (!(hSetIdx in runeSets.StatRuneHSets)) runeSets.StatRuneHSets[hSetIdx] = {}
+      runeSets.StatRuneHSets[hSetIdx]![statRuneName] = statRuneId
     }
   }
 
@@ -83,61 +82,61 @@ import { writeToTmpFile } from './Helpers/writeToTmpFile'
   await writeToTmpFile(
     constant,
     {
-      constName: 'PrimaryTrees',
-      json: runeSets.PrimaryTrees,
+      constName: 'PrimaryRuneTrees',
+      json: runeSets.PrimaryRuneTrees,
     },
     {
-      constName: 'SecondaryTrees',
-      json: runeSets.SecondaryTrees,
+      constName: 'SecondaryRuneTrees',
+      json: runeSets.SecondaryRuneTrees,
     },
     {
-      constName: 'Keystones',
-      json: runeSets.Keystones,
+      constName: 'KeystoneIds',
+      json: runeSets.KeystoneIds,
     },
     {
-      constName: 'StatRunes',
-      json: runeSets.StatRunes,
+      constName: 'StatRuneIds',
+      json: runeSets.StatRuneIds,
     },
     {
-      constName: 'All',
+      constName: 'RuneIds',
       json: {
-        1: '...PrimaryTrees.Precision',
-        2: '...PrimaryTrees.Domination',
-        3: '...PrimaryTrees.Sorcery',
-        4: '...PrimaryTrees.Resolve',
-        5: '...PrimaryTrees.Inspiration',
-        6: '...StatRunes',
+        1: '...PrimaryRuneTrees.Precision',
+        2: '...PrimaryRuneTrees.Domination',
+        3: '...PrimaryRuneTrees.Sorcery',
+        4: '...PrimaryRuneTrees.Resolve',
+        5: '...PrimaryRuneTrees.Inspiration',
+        6: '...StatRuneIds',
       },
       keysToEscape: [1, 2, 3, 4, 5, 6],
     },
     {
-      constName: 'RunesByHSet',
-      json: runeSets.RunesByHSet,
+      constName: 'RuneTreeHSets',
+      json: runeSets.RuneTreeHSets,
     },
     {
-      constName: 'StatRunesByHSet',
-      json: runeSets.StatRunesByHSet,
+      constName: 'StatRuneHSets',
+      json: runeSets.StatRuneHSets,
     },
     {
       constName: constant,
       comment: `Contains all Rune IDs that are known to man in the game of League of Legends. Sorted by various useful categories. There are a total of ${totalRuneAmt} runes in the game.`,
       json: {
-        'PrimaryTrees': 'PrimaryTrees',
-        'SecondaryTrees': 'SecondaryTrees',
-        'Keystones': 'Keystones',
-        'StatRunes': 'StatRunes',
-        'All': 'All',
-        'RunesByHSet': 'RunesByHSet',
-        'StatRunesByHSet': 'StatRunesByHSet',
+        'PrimaryRuneTrees': 'PrimaryRuneTrees',
+        'SecondaryRuneTrees': 'SecondaryRuneTrees',
+        'KeystoneIds': 'KeystoneIds',
+        'StatRuneIds': 'StatRuneIds',
+        'RuneIds': 'RuneIds',
+        'RuneTreeHSets': 'RuneTreeHSets',
+        'StatRuneHSets': 'StatRuneHSets',
       },
       keysToEscape: [
-        'PrimaryTrees',
-        'SecondaryTrees',
-        'Keystones',
-        'StatRunes',
-        'All',
-        'RunesByHSet',
-        'StatRunesByHSet',
+        'PrimaryRuneTrees',
+        'SecondaryRuneTrees',
+        'KeystoneIds',
+        'StatRuneIds',
+        'RuneIds',
+        'RuneTreeHSets',
+        'StatRuneHSets',
       ],
     },
   )

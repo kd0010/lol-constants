@@ -1,4 +1,4 @@
-import { StatRuneIds } from '../../Constants/Runes/StatRuneIds'
+import { StatRuneIds } from '../../Constants/Runes/RuneSetsByRuneNames'
 import { StatRuneId, StatRuneName } from '../../types'
 
 export function getStatRuneIdByName(name: StatRuneName): StatRuneId {

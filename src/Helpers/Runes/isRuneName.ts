@@ -1,4 +1,4 @@
-import { RuneIds } from '../../Constants/Runes/RuneIds'
+import { RuneIds } from '../../Constants/Runes/RuneSetsByRuneNames'
 import { RuneName } from '../../types'
 
 export function isRuneName(name: string): name is RuneName {
