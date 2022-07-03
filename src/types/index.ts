@@ -177,6 +177,9 @@ export type RuneTreeName = typeof RuneTreeNames[ keyof typeof RuneTreeNames ]
 export type RuneTreeType = keyof typeof RuneTreeTypes
 export type StatRunesCategory = 'StatRunes'
 export type RuneCategory =
+  | RuneTreeType
+  | StatRunesCategory
+export type RuneSlice =
   | RuneTreeName
   | StatRunesCategory
 
