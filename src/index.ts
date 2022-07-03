@@ -42,6 +42,10 @@ export { SpellKeys } from './Constants/Spells/SpellKeys'
 export { SpellNames } from './Constants/Spells/SpellNames'
 
 // # Helpers
+export { isLane } from './Helpers/isLane'
+export { isLevel } from './Helpers/isLevel'
+export { isPosition } from './Helpers/isPosition'
+export { isSkill } from './Helpers/isSkill'
 // ## Champions
 export { getChampionIdByKey } from './Helpers/Champions/getChampionIdByKey'
 export { getChampionIdByName } from './Helpers/Champions/getChampionIdByName'
