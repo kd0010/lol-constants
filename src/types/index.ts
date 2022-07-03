@@ -179,7 +179,7 @@ export type StatRunesCategory = 'StatRunes'
 export type RuneCategory =
   | RuneTreeType
   | StatRunesCategory
-export type RuneSlice =
+export type RuneCategorySlice =
   | RuneTreeName
   | StatRunesCategory
 
