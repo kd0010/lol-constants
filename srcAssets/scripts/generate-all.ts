@@ -1,3 +1,5 @@
+import './generate-categorized-item-keys'
+import './generate-categorized-item-names'
 import './generate-champion-ids-by-name'
 import './generate-champion-ids'
 import './generate-champion-keys'

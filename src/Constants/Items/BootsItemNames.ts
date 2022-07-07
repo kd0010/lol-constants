@@ -1,0 +1,1 @@
+export const BootsItemNames = {"3006":"Berserker's Greaves","3009":"Boots of Swiftness","3020":"Sorcerer's Shoes","3047":"Plated Steelcaps","3111":"Mercury's Treads","3117":"Mobility Boots","3158":"Ionian Boots of Lucidity"} as const

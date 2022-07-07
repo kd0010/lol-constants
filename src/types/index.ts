@@ -17,15 +17,28 @@ import { Levels } from '../Constants/Levels'
 import { Skills } from '../Constants/Skills'
 import { RuneTreeIds } from '../Constants/Runes/RuneTreeIds'
 import { RuneIds, RuneSetsByRuneNames, StatRuneIds } from '../Constants/Runes/RuneSetsByRuneNames'
+import { MythicItemNames } from '../Constants/Items/MythicItemNames'
+import { MythicItemKeys } from '../Constants/Items/MythicItemKeys'
+import { LegendaryItemNames } from '../Constants/Items/LegendaryItemNames'
+import { LegendaryItemKeys } from '../Constants/Items/LegendaryItemKeys'
+import { BootsItemNames } from '../Constants/Items/BootsItemNames'
+import { BootsItemKeys } from '../Constants/Items/BootsItemKeys'
 
 export type ChampionId = typeof ChampionIds[ keyof typeof ChampionIds ]
 export type ChampionKey = typeof ChampionKeys[ keyof typeof ChampionKeys ]
 export type ChampionName = typeof ChampionNames[ keyof typeof ChampionNames ]
-export type ItemKey = typeof ItemKeys[ keyof typeof ItemKeys ]
-export type ItemName = typeof ItemNames[ keyof typeof ItemNames ]
 export type SpellId = typeof SpellIds[ keyof typeof SpellIds ]
 export type SpellKey = typeof SpellKeys[ keyof typeof SpellKeys ]
 export type SpellName = typeof SpellNames[ keyof typeof SpellNames ]
+
+export type ItemKey = typeof ItemKeys[ keyof typeof ItemKeys ]
+export type ItemName = typeof ItemNames[ keyof typeof ItemNames ]
+export type MythicItemKey = keyof typeof MythicItemNames
+export type MythicItemName = keyof typeof MythicItemKeys
+export type LegendaryItemKey = keyof typeof LegendaryItemNames
+export type LegendaryItemName = keyof typeof LegendaryItemKeys
+export type BootsItemKey = keyof typeof BootsItemNames
+export type BootsItemName = keyof typeof BootsItemKeys
 
 /**
  * There are 3 main Rune ID types:
