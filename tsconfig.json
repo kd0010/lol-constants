@@ -1,0 +1,33 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    // ## Type Checking
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // ## Modules
+    "module": "esnext",
+    "moduleResolution": "node",
+
+    // ## Emit
+    "declaration": true,
+    "noEmitOnError": true,
+    "outDir": "./dist",
+    
+    // ## Interop Constraints
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    // ## Language and Environment
+    "target": "es2017",
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true,
+  },
+}
