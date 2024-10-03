@@ -125,6 +125,6 @@ Besides being an easy-to-update library with each League patch and to stay updat
 + Enable total backwards compatibility with older patches (i.e. no missing items or something for last couple of patches, preferably two years, which is the limit set by Riot API)
 + Fulfill any missing types and constants within the context of Riot API. Perhaps provide interfaces for Riot API responses.
 + More detailed champions, items, runes, and spells information. Would require using an own database of those instead of relying on DataDragon.
-+ Optimized library size/splitting (currently library should be around ~100KB).
++ Optimized library size/splitting (currently library should be around ~100KB tscompiled).
 
 So, why not give this library a star and see where it goes?

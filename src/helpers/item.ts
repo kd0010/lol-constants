@@ -64,38 +64,45 @@ function getItemIdByName(itemName: ItemName, mapId: MapId=11): ItemId {
   }
 }
 
-export function isStarterItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isStarterItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.srType == ItemSrTypes.STARTER
   return getItem(item_id_name).srType == ItemSrTypes.STARTER
 }
 
-export function isBasicItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isBasicItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.srType == ItemSrTypes.BASIC
   return getItem(item_id_name).srType == ItemSrTypes.BASIC
 }
 
-export function isEpicItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isEpicItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.srType == ItemSrTypes.EPIC
   return getItem(item_id_name).srType == ItemSrTypes.EPIC
 }
 
-export function isLegendaryItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isLegendaryItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.srType == ItemSrTypes.LEGENDARY
   return getItem(item_id_name).srType == ItemSrTypes.LEGENDARY
 }
 
-export function isTrinketItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isTrinketItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.srType == ItemSrTypes.TRINKET
   return getItem(item_id_name).srType == ItemSrTypes.TRINKET
 }
 
-export function isBootsItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isBootsItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.id in bootsItemIds
   if (typeof item_id_name == 'number') return item_id_name in bootsItemIds
   return getItemIdByName(item_id_name) in bootsItemIds
 }
 
-export function isConsumableItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName): boolean {
+export function isConsumableItem(item_id_name: typeof ItemsArr[number] | ItemId | ItemName | 0): boolean {
+  if (item_id_name == 0) return false
   if (typeof item_id_name == 'object') return item_id_name.srType == ItemSrTypes.CONSUMABLE
   return getItem(item_id_name).srType == ItemSrTypes.CONSUMABLE
 }
