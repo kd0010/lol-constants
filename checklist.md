@@ -11,7 +11,6 @@
 2. Set new patch version in `src/Patch`
 3. `pnpm run patch:update`
 ---
-1. `pnpm run build`
-2. version
-3. commit
-4. `pnpm publish`
+1. version
+2. commit
+3. `pnpm publish`
