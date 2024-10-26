@@ -15,6 +15,7 @@ export const Regions = {
   'TH': {region: 'TH', platform: 'TH2'},
   'TW': {region: 'TW', platform: 'TW2'},
   'VN': {region: 'VN', platform: 'VN2'},
+  'MENA': {region: 'MENA', platform: 'ME1'},
   'PBE': {region: 'PBE', platform: 'PBE1'},
 } as const
 
@@ -39,6 +40,7 @@ const platforms = {
   'TH2': 'TH',
   'TW2': 'TW',
   'VN2': 'VN',
+  'ME1': 'MENA',
   'PBE1': 'PBE',
 } as const
 
