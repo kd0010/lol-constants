@@ -8,6 +8,10 @@
 
 # Updating to new patch
 1. Read patch notes and note to self what has been updated, make alterations wherever needed
+   - Check `dev/constants/*`
+   - Check `src/constants/*`
+   - Check `src/enums/*`
+   - Check `src/objects/*`
 2. Set new patch version in `src/Patch`
 3. `pnpm run patch:update`
 ---
