@@ -1,7 +1,4 @@
 export const ChampionClasses = {
-  // # Controller
-  'Enchanter': 'Enchanter',
-  'Catcher': 'Catcher',
   // # Fighter
   'Juggernaut': 'Juggernaut',
   'Diver': 'Diver',
@@ -11,6 +8,9 @@ export const ChampionClasses = {
   'Artillery': 'Artillery',
   // # Marskman
   'Marksman': 'Marksman',
+  // # Controller
+  'Enchanter': 'Enchanter',
+  'Catcher': 'Catcher',
   // # Slayer
   'Assassin': 'Assassin',
   'Skirmisher': 'Skirmisher',

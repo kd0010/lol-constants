@@ -1,3 +1,3 @@
 export const Patch = {
-  version: '14.23',
+  version: '14.24',
 } as const
