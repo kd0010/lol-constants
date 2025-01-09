@@ -16,6 +16,28 @@ const ITEM_IDS_TO_SKIP = {
   1105: true, // "Mosstomper Seedling" (old id)
   1106: true, // "Gustwalker Hatchling" (old id)
   1107: true, // "Scorchclaw Pup" (old id)
+  322065: true, // Unknown
+  323002: true, // Unknown
+  323003: true, // Unknown
+  323004: true, // Unknown
+  323050: true, // Unknown
+  323070: true, // Unknown
+  323075: true, // Unknown
+  323107: true, // Unknown
+  323109: true, // Unknown
+  323110: true, // Unknown
+  323119: true, // Unknown
+  323190: true, // Unknown
+  323222: true, // Unknown
+  323504: true, // Unknown
+  324005: true, // Unknown
+  326616: true, // Unknown
+  326617: true, // Unknown
+  326620: true, // Unknown
+  326621: true, // Unknown
+  326657: true, // Unknown
+  328020: true, // Unknown
+  447105: true, // Removed, Arena item
 }
 
 const VALID_SR_TYPES = {
@@ -71,14 +93,15 @@ for (itemId in Item.data) {
   // commented because shall include all items for now
   // if (Object.values(item.maps).every(value => value === false)) continue // completely inactive items
 
-  let srType: number | undefined = item.maps[11]
+  const isSrItem = item.maps[11]
+  let srType: number | undefined = isSrItem
     ? itemNameToCtg[cleanItemName.toLowerCase()]
     : -1
   
   srType ??= itemTypeFillers[cleanItemName]
 
   if (srType === undefined) _failedItemNames.push(cleanItemName)
-  if (!(srType in VALID_SR_TYPES)) throw `Unexpected "srType" encountered: ${srType} for item ${cleanItemName}`
+  if (_failedItemNames.length == 0 && !(srType in VALID_SR_TYPES)) throw `Unexpected "srType" encountered: ${srType} for item ${cleanItemName}`
 
   items[itemId] = {
     id: itemIdNum,
@@ -103,7 +126,7 @@ for (itemId in Item.data) {
 }
 
 if (_failedItemNames.length != 0) {
-  await writeFile('src/assets/generated/failedItemNames.json', JSON.stringify(_failedItemNames), 'utf-8')
+  await writeFile('dev/generated/failedItemNames.json', JSON.stringify(_failedItemNames), 'utf-8')
   throw `Failed to find category for items: failedItemNames.json; add necessary items to itemNameToCtg.json`
 }
 

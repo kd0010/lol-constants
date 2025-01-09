@@ -106,6 +106,17 @@ for (itemType in itemNamesByCtg) {
 
     out['Sin Eater'.toLowerCase()] = 3
     out['Lightning Braid'.toLowerCase()] = 3
+
+    // New patch 25.S1.1 shenanigans
+    out['Swiftmarch'.toLowerCase()] = 12
+    out['Crimson Lucidity'.toLowerCase()] = 12
+    out['Gunmetal Greaves'.toLowerCase()] = 12
+    out['Chainlaced Crushers'.toLowerCase()] = 12
+    out['Armored Advance'.toLowerCase()] = 12
+    out["Spellslinger's Shoes".toLowerCase()] = 12
+    out['Forever Forward'.toLowerCase()] = 12
+    //
+    out["Bloodletter's Curse".toLowerCase()] = 3
   }
 }
 
