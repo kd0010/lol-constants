@@ -1,6 +1,7 @@
 import {ItemSrTypes} from '../enums/ItemSrTypes'
 import {
   bootsItemIds,
+  failsafeItem,
   ItemId,
   ItemName,
   itemNames,
@@ -36,7 +37,7 @@ import {MapId, MapsArr} from '../objects/Maps'
  */
 export function getItem(id_name: ItemId | ItemName, mapId: MapId=11): typeof Items[keyof typeof Items] {
   if (typeof id_name == 'number') return Items[id_name]
-  return Items[getItemIdByName(id_name, mapId)]
+  return Items[getItemIdByName(id_name, mapId)] ?? failsafeItem
 }
 
 /** @see `getItem` */

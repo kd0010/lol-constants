@@ -26,6 +26,7 @@ export const Maps = {
   /** 2024 Swarm event map */
   33: {id: 33, title: "Swarm"},
 } as const
+const failsafeMap = {id: -1, title: ''} as const
 
 export const MapsArr = Object.values(Maps)
 export type MapId = typeof MapsArr[number]['id']
@@ -71,5 +72,5 @@ export function isMapTitle(title: string | null | undefined): title is MapTitle 
 /** Get map by its **id** or **title**. */
 export function getMap(id_title: MapId | MapTitle): typeof Maps[keyof typeof Maps] {
   if (typeof id_title == 'number') return Maps[id_title]
-  return Maps[mapTitles[id_title]]
+  return Maps[mapTitles[id_title]] ?? failsafeMap
 }

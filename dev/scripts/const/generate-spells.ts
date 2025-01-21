@@ -2,7 +2,9 @@ import {Summoner} from '../../generated/Summoner'
 import {parseNumber} from '../../helpers/parseNumber'
 import {writeToTmpFile} from '../../helpers/writeToTmpFile'
 
-const spellsObj: {[spellId: string]: {id: number, key: string, name: string}} = {}
+type Spell = {id: number, key: string, name: string}
+const spellsObj: {[spellId: string]: Spell} = {}
+const failsafeSpell: Spell = {id: -1, key: '', name: ''}
 const spellKeysAsKeys: {[spellKey: string]: number} = {}
 const spellNamesAsKeys: {[spellName: string]: number} = {}
 
@@ -32,6 +34,10 @@ await writeToTmpFile(
   {
     constName: 'Spells',
     json: spellsObj,
+  },
+  {
+    constName: 'failsafeSpell',
+    json: failsafeSpell,
   },
   {
     constName: 'spellKeys',

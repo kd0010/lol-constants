@@ -53,6 +53,7 @@ export const Queues = {
   2010: {id: 2010, title: 'Tutorial 2'},
   2020: {id: 2020, title: 'Tutorial 3'},
 } as const
+const failsafeQueue = {id: -1, title: ''} as const
 
 export const QueuesArr = Object.values(Queues)
 export type QueueId = typeof QueuesArr[number]['id']
@@ -125,5 +126,5 @@ export function isQueueTitle(title: string | null | undefined): title is QueueTi
 /** Get queue by its **id** or **title**. */
 export function getQueue(id_title: QueueId | QueueTitle): typeof Queues[keyof typeof Queues] {
   if (typeof id_title == 'number') return Queues[id_title]
-  return Queues[queueTitles[id_title]]
+  return Queues[queueTitles[id_title]] ?? failsafeQueue
 }

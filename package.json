@@ -1,13 +1,15 @@
 {
   "name": "lol-constants",
-  "version": "3.0.8",
+  "version": "3.1.0",
   "description": "League of Legends constants, functions, and types. Provides a plathera of functions to easily convert between ID, Name, and Key for champions, items, summoner spells, and runes.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "patch:update": "pnpm run scripts:pull && pnpm run scripts:generate && pnpm run build",
     "temp": "node --no-warnings --loader ts-node/esm dev/scripts/temp",
@@ -19,10 +21,10 @@
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.5.5",
-    "jsdom": "^25.0.0",
+    "@types/node": "^22.10.7",
+    "jsdom": "^26.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.2",
+    "typescript": "^5.7.3",
     "vite": "^5.4.7"
   },
   "repository": {
@@ -33,12 +35,11 @@
     "lol",
     "league",
     "leagueoflegends",
-    "riot",
-    "constants",
     "types",
+    "riot",
     "api",
     "typescript",
     "ts"
   ],
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }

@@ -2,7 +2,9 @@ import {Champion} from '../../generated/Champion'
 import {parseNumber} from '../../helpers/parseNumber'
 import {writeToTmpFile} from '../../helpers/writeToTmpFile'
 
-const championObjects: {[champId: string]: {id: number, key: string, name: string}} = {}
+type Champ = {id: number, key: string, name: string}
+const championObjects: {[champId: string]: Champ} = {}
+const failsafeChampion: Champ = {id: -1, key: '', name: ''}
 const championKeysAsKeys: {[champKey: string]: number} = {}
 const championNamesAsKeys: {[champName: string]: number} = {}
 
@@ -28,6 +30,10 @@ await writeToTmpFile(
   {
     constName: 'Champions',
     json: championObjects,
+  },
+  {
+    constName: 'failsafeChampion',
+    json: failsafeChampion,
   },
   {
     constName: 'championKeys',

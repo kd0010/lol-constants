@@ -5,13 +5,14 @@ import {
   ChampionName,
   championNames,
   Champions,
+  failsafeChampion,
 } from '../objects/generated/Champions'
 
 /** Get a champion by its **id**, **key**, or **name**. */
-export function getChampion(id_key_name: ChampionId | ChampionKey | ChampionName) {
+export function getChampion(id_key_name: ChampionId | ChampionKey | ChampionName): typeof Champions[keyof typeof Champions] {
   if (typeof id_key_name == 'number') return Champions[id_key_name]
   if (isChampionKey(id_key_name)) return Champions[championKeys[id_key_name]]
-  return Champions[championNames[id_key_name]]
+  return Champions[championNames[id_key_name]] ?? failsafeChampion
 }
 
 export function isChampionId(id: number | null | undefined): id is ChampionId {

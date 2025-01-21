@@ -72,6 +72,7 @@ type Item = {
   srType: number
 }
 const items: {[itemId: string]: Item} = {}
+const failsafeItem: Item = {id: -1, name: '', srType: -1}
 const itemNamesAsKeys: {[itemName: string]: number | {[mapId: string]: number}} = {}
 const bootsItemIdsAsKeys: {[bootsItemId: string]: true} = {}
 const _idsThatBelongToName: {[itemName: string]: number[]} = {}
@@ -174,6 +175,10 @@ await writeToTmpFile(
   {
     constName: 'Items',
     json: items,
+  },
+  {
+    constName: 'failsafeItem',
+    json: failsafeItem,
   },
   {
     constName: '',
