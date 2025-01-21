@@ -10,8 +10,8 @@ import {
 
 /** Get a summoner spell by its **id**, **key** or **name**. */
 export function getSpell(id_key_name: SpellId | SpellKey | SpellName): typeof Spells[keyof typeof Spells] {
-  if (typeof id_key_name == 'number') return Spells[id_key_name]
-  if (isSpellKey(id_key_name)) return Spells[spellKeys[id_key_name]]
+  if (typeof id_key_name == 'number') return Spells[id_key_name] ?? failsafeSpell
+  if (isSpellKey(id_key_name)) return Spells[spellKeys[id_key_name]] ?? failsafeSpell
   return Spells[spellNames[id_key_name]] ?? failsafeSpell
 }
 

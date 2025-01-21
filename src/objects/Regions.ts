@@ -59,6 +59,6 @@ export function isPlatform(platform: string | null | undefined): platform is Pla
  * Convert between the two.
  */
 export function getRegion(region_platform: Region | Platform): typeof Regions[keyof typeof Regions] {
-  if (isRegion(region_platform)) return Regions[region_platform]
+  if (isRegion(region_platform)) return Regions[region_platform] ?? failsafeRegion
   return Regions[platforms[region_platform]] ?? failsafeRegion
 }

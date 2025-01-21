@@ -10,8 +10,8 @@ import {
 
 /** Get a champion by its **id**, **key**, or **name**. */
 export function getChampion(id_key_name: ChampionId | ChampionKey | ChampionName): typeof Champions[keyof typeof Champions] {
-  if (typeof id_key_name == 'number') return Champions[id_key_name]
-  if (isChampionKey(id_key_name)) return Champions[championKeys[id_key_name]]
+  if (typeof id_key_name == 'number') return Champions[id_key_name] ?? failsafeChampion
+  if (isChampionKey(id_key_name)) return Champions[championKeys[id_key_name]] ?? failsafeChampion
   return Champions[championNames[id_key_name]] ?? failsafeChampion
 }
 

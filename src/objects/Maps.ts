@@ -71,6 +71,6 @@ export function isMapTitle(title: string | null | undefined): title is MapTitle 
 
 /** Get map by its **id** or **title**. */
 export function getMap(id_title: MapId | MapTitle): typeof Maps[keyof typeof Maps] {
-  if (typeof id_title == 'number') return Maps[id_title]
+  if (typeof id_title == 'number') return Maps[id_title] ?? failsafeMap
   return Maps[mapTitles[id_title]] ?? failsafeMap
 }

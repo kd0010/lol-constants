@@ -36,7 +36,7 @@ import {MapId, MapsArr} from '../objects/Maps'
  * Use `lol.item.isAvailable` to determine whether item is available on a certain map.
  */
 export function getItem(id_name: ItemId | ItemName, mapId: MapId=11): typeof Items[keyof typeof Items] {
-  if (typeof id_name == 'number') return Items[id_name]
+  if (typeof id_name == 'number') return Items[id_name] ?? failsafeItem
   return Items[getItemIdByName(id_name, mapId)] ?? failsafeItem
 }
 
