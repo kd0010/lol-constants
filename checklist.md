@@ -7,7 +7,7 @@
 2. exports in `index.ts` and `lol.ts`
 
 # Updating to new patch
-1. Read patch notes and note to self what has been updated, make alterations wherever needed
+1. Update based on patch notes
    - Check `dev/constants/*`
    - Check `src/constants/*`
    - Check `src/enums/*`

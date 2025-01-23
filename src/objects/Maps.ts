@@ -1,30 +1,38 @@
 export const Maps = {
+  /** Original Summer variant */
+  1: {id: 1, title: "Summoner's Rift"},
+  /** Original Autumn variant */
+  2: {id: 2, title: "Summoner's Rift"},
   /** Tutorial map */
-  3:  {id: 3,  title: "The Proving Grounds"},
+  3:  {id: 3,  title: 'The Proving Grounds'},
+  /** Original TT */
+  4: {id: 4, title: 'Twisted Treeline'},
+  /** Dominion map */
+  8: {id: 8, title: 'The Crystal Scar'},
   /** Last TT map */
-  10: {id: 10, title: "Twisted Treeline"},
+  10: {id: 10, title: 'Twisted Treeline'},
   /** Current version */
   11: {id: 11, title: "Summoner's Rift"},
   /** ARAM map */
-  12: {id: 12, title: "Howling Abyss"},
+  12: {id: 12, title: 'Howling Abyss'},
   /** Alternate ARAM map */
   14: {id: 14, title: "Butcher's Bridge"},
   /** Dark Star: Singularity map */
-  16: {id: 16, title: "Cosmic Ruins"},
+  16: {id: 16, title: 'Cosmic Ruins'},
   /** Star Guardian Invasion map */
-  18: {id: 18, title: "Valoran City Park"},
+  18: {id: 18, title: 'Valoran City Park'},
   /** PROJECT: Hunters map */
-  19: {id: 19, title: "Substructure 43"},
+  19: {id: 19, title: 'Substructure 43'},
   /** Odyssey: Extraction map */
-  20: {id: 20, title: "Crash Site"},
+  20: {id: 20, title: 'Crash Site'},
   /** Nexus Blitz map */
-  21: {id: 21, title: "Nexus Blitz"},
+  21: {id: 21, title: 'Nexus Blitz'},
   /** Teamfight Tactics map */
-  22: {id: 22, title: "Convergence"},
+  22: {id: 22, title: 'Convergence'},
   /** Arena map */
-  30: {id: 30, title: "Rings of Wrath"},
+  30: {id: 30, title: 'Rings of Wrath'},
   /** 2024 Swarm event map */
-  33: {id: 33, title: "Swarm"},
+  33: {id: 33, title: 'Swarm'},
 } as const
 const failsafeMap = {id: -1, title: ''} as const
 
@@ -33,8 +41,16 @@ export type MapId = typeof MapsArr[number]['id']
 export type MapTitle = typeof MapsArr[number]['title']
 
 const mapTitles = {
+  /** Original Summer variant */
+  "Summoner's Rift (Summer)": 1,
+  /** Original Autumn variant */
+  "Summoner's Rift (Autumn)": 2,
   /** Tutorial map */
   'The Proving Grounds': 3,
+  /** Original TT */
+  'Twisted Treeline (Original)': 4,
+  /** Dominion map */
+  'The Crystal Scar': 8,
   /** Last TT map */
   'Twisted Treeline': 10,
   /** Current version */
