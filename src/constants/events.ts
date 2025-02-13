@@ -3,6 +3,7 @@ export const MonsterTypes = {
   'DRAGON': 'DRAGON',
   'RIFTHERALD': 'RIFTHERALD',
   'BARON_NASHOR': 'BARON_NASHOR',
+  'ATAKHAN': 'ATAKHAN',
 } as const
 
 export type MonsterType = typeof MonsterTypes[keyof typeof MonsterTypes]
@@ -69,6 +70,7 @@ export const WardTypes = {
   'CONTROL_WARD': 'CONTROL_WARD',
   'SIGHT_WARD': 'SIGHT_WARD',
   'BLUE_TRINKET': 'BLUE_TRINKET',
+  'TEEMO_MUSHROOM': 'TEEMO_MUSHROOM',
 } as const
 
 export type WardType = typeof WardTypes[keyof typeof WardTypes]
