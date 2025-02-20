@@ -16,27 +16,30 @@ const ITEM_IDS_TO_SKIP = {
   1105: true, // "Mosstomper Seedling" (old id)
   1106: true, // "Gustwalker Hatchling" (old id)
   1107: true, // "Scorchclaw Pup" (old id)
-  322065: true, // Unknown
-  323002: true, // Unknown
-  323003: true, // Unknown
-  323004: true, // Unknown
-  323050: true, // Unknown
-  323070: true, // Unknown
-  323075: true, // Unknown
-  323107: true, // Unknown
-  323109: true, // Unknown
-  323110: true, // Unknown
-  323119: true, // Unknown
-  323190: true, // Unknown
-  323222: true, // Unknown
-  323504: true, // Unknown
-  324005: true, // Unknown
-  326616: true, // Unknown
-  326617: true, // Unknown
-  326620: true, // Unknown
-  326621: true, // Unknown
-  326657: true, // Unknown
-  328020: true, // Unknown
+  322065: true, // Swiftplay item
+  323002: true, // Swiftplay item
+  323003: true, // Swiftplay item
+  323004: true, // Swiftplay item
+  323050: true, // Swiftplay item
+  323070: true, // Swiftplay item
+  323075: true, // Swiftplay item
+  323107: true, // Swiftplay item
+  323109: true, // Swiftplay item
+  323110: true, // Swiftplay item
+  323119: true, // Swiftplay item
+  323190: true, // Swiftplay item
+  323222: true, // Swiftplay item
+  323040: true, // Swiftplay item
+  323504: true, // Swiftplay item
+  324005: true, // Swiftplay item
+  326616: true, // Swiftplay item
+  326617: true, // Swiftplay item
+  326620: true, // Swiftplay item
+  326621: true, // Swiftplay item
+  326657: true, // Swiftplay item
+  328020: true, // Swiftplay item
+  323042: true, // Swiftplay item
+  323121: true, // Swiftplay item
   447105: true, // Removed, Arena item
 }
 
@@ -77,6 +80,7 @@ const itemNamesAsKeys: {[itemName: string]: number | {[mapId: string]: number}} 
 const bootsItemIdsAsKeys: {[bootsItemId: string]: true} = {}
 const _idsThatBelongToName: {[itemName: string]: number[]} = {}
 const _failedItemNames: string[] = []
+const _failedMapOverlapItems: string[] = []
 
 let itemId: keyof typeof Item.data
 for (itemId in Item.data) {
@@ -110,10 +114,11 @@ for (itemId in Item.data) {
     srType: srType ?? -1,
   }
 
+  // Check for overlap in the maps in which the item appears
   const mapsObj = (itemNamesAsKeys[cleanItemName] ??= {}) as {[mapId: string]: number} // it is not yet the other variant (number)
   for (const mapId in item.maps) {
     if (!item.maps[mapId]) continue
-    if (mapId in mapsObj) throw `Unhandled map overlap caught for item: ${cleanItemName}`
+    if (mapId in mapsObj) _failedMapOverlapItems.push(cleanItemName)
     mapsObj[mapId] = itemIdNum
   }
 
@@ -127,8 +132,12 @@ for (itemId in Item.data) {
 }
 
 if (_failedItemNames.length != 0) {
-  await writeFile('dev/generated/failedItemNames.json', JSON.stringify(_failedItemNames), 'utf-8')
-  throw `Failed to find category for items: failedItemNames.json; add necessary items to itemNameToCtg.json`
+  await writeFile('dev/tmp/failedItemNames.json', JSON.stringify(_failedItemNames), 'utf-8')
+  throw `Failed to find category for items: tmp/failedItemNames.json; add necessary items to itemNameToCtg.json`
+}
+if (_failedMapOverlapItems.length != 0) {
+  await writeFile('dev/tmp/failedMapOverlapItems.json', JSON.stringify(_failedMapOverlapItems), 'utf-8')
+  throw `Unacceptable map overlap for items: tmp/failedMapOverlapItems.json; eliminate the unnecessary items.`
 }
 
 // Finalize value (mapsObjOrItemId) for each item
