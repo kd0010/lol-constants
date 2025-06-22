@@ -54,8 +54,8 @@ See [type validator usage example](./examples/type-validator-fn-example.ts)
 
 
 
-# Why the `lol` object?
-In part, it is meant to be an introductory entry point object for the library. You can explore all the different amenities this library provides without a hassle of looking for them outside of your code editor. When you have discovered a certain method, such as `lol.region.get`, you may start using its shorthand function, in this case `getRegion`. Additionally, you may look into the [examples file](./examples/examples-with-lol.ts) for all equivalents laid out.
+# `lol` object vs. shorthand functions
+In part, `lol` is meant to be an introductory entry point object for the library. You can explore all the different amenities this library provides without a hassle of looking for them outside of your code editor. When you have discovered a certain method, such as `lol.region.get`, you may start using its shorthand function, in this case `getRegion`. Additionally, you may look into the [examples file](./examples/examples-with-lol.ts) for all equivalents laid out.
 
 **Anything that you may find in the `lol` object can also be imported as a standalone constant, enum, or function.**
 
@@ -118,13 +118,3 @@ import {
 ```
 
 More types can be found here: [examples/](./examples/)
-
-# Future plans
-Besides being an easy-to-update library with each League patch and to stay updated whenever a new patch does come out, there are several areas of interest for this library moving forward:
-+ Provide tools (functions and such) for front-end work: getting icons and such.
-+ Enable total backwards compatibility with older patches (i.e. no missing items or something for last couple of patches, preferably two years, which is the limit set by Riot API)
-+ Fulfill any missing types and constants within the context of Riot API. Perhaps provide interfaces for Riot API responses.
-+ More detailed champions, items, runes, and spells information. Would require using an own database of those instead of relying on DataDragon.
-+ Optimized library size/splitting (currently library should be around ~100KB tscompiled).
-
-So, why not give this library a star and see where it goes?
