@@ -1,4 +1,5 @@
 import {writeFile} from 'fs/promises'
+import {ItemSrType, ItemSrTypes} from '../../../src/enums/ItemSrTypes'
 import {Item} from '../../generated/Item'
 import itemNameToCtg from '../../generated/itemNameToCtg.json' with {type: 'json'}
 import {parseNumber} from '../../helpers/parseNumber'
@@ -43,7 +44,7 @@ const ITEM_IDS_TO_SKIP = {
   447105: true, // Removed, Arena item
 }
 
-const VALID_SR_TYPES = {
+const VALID_SR_TYPES: {[srType in ItemSrType]} = {
   '0': true,
   '1': true,
   '2': true,
@@ -52,21 +53,22 @@ const VALID_SR_TYPES = {
   '12': true,
   '13': true,
   '-1': true,
+  '-2': false,
 }
 
 /** From `failedItems.json` */
 const itemTypeFillers: {[itemName: string]: number} = {
-  "Penetrating Bullets": -1, // some tower item
-  "OvererchargedHA": -1, // some tower item
-  "Tower Power-Up": -1, // some tower item
-  "Chemtech Putrifier": -1, // arena exclusive, no longer on SR
-  "Kalista's Black Spear": -1, // other
-  "Sylas' Black Spear": -1, // other
-  "Night Harvester": -1, // arena exclusive, no longer on SR
-  "Demonic Embrace": -1, // arena exclusive, no longer on SR
-  "Prowler's Claw": -1, // arena exclusive, no longer on SR
-  "Gangplank Placeholder": -1, // other
-  "Anathema's Chains": -1, // arena exclusive, no longer on SR
+  "Penetrating Bullets": ItemSrTypes.NONSR, // some tower item
+  "OvererchargedHA": ItemSrTypes.NONSR, // some tower item
+  "Tower Power-Up": ItemSrTypes.NONSR, // some tower item
+  "Chemtech Putrifier": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
+  "Kalista's Black Spear": ItemSrTypes.NONSR, // other
+  "Sylas' Black Spear": ItemSrTypes.NONSR, // other
+  "Night Harvester": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
+  "Demonic Embrace": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
+  "Prowler's Claw": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
+  "Gangplank Placeholder": ItemSrTypes.NONSR, // other
+  "Anathema's Chains": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
 }
 
 type Item = {
@@ -75,7 +77,7 @@ type Item = {
   srType: number
 }
 const items: {[itemId: string]: Item} = {}
-const failsafeItem: Item = {id: -1, name: '', srType: -1}
+const failsafeItem: Item = {id: 0, name: '', srType: ItemSrTypes.NONSR}
 const itemNamesAsKeys: {[itemName: string]: number | {[mapId: string]: number}} = {}
 const bootsItemIdsAsKeys: {[bootsItemId: string]: true} = {}
 const _idsThatBelongToName: {[itemName: string]: number[]} = {}
@@ -101,8 +103,8 @@ for (itemId in Item.data) {
   const isSrItem = item.maps[11]
   let srType: number | undefined = isSrItem
     ? itemNameToCtg[cleanItemName.toLowerCase()]
-    : -1
-  
+    : ItemSrTypes.NONSR
+
   srType ??= itemTypeFillers[cleanItemName]
 
   if (srType === undefined) _failedItemNames.push(cleanItemName)
@@ -111,7 +113,7 @@ for (itemId in Item.data) {
   items[itemId] = {
     id: itemIdNum,
     name: cleanItemName,
-    srType: srType ?? -1,
+    srType: srType ?? ItemSrTypes.NONSR,
   }
 
   // Check for overlap in the maps in which the item appears

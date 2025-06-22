@@ -6,7 +6,8 @@ export const ItemSrTypes = {
   TRINKET: 11,
   BOOTS: 12,
   CONSUMABLE: 13,
-  MISC: -1,
+  NONSR: -1,
+  UNKNOWN: -2,
 } as const
 
 export type ItemSrType = typeof ItemSrTypes[keyof typeof ItemSrTypes]

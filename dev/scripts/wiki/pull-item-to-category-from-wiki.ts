@@ -4,7 +4,9 @@ import {writeFile} from 'fs/promises'
 import {JSDOM} from 'jsdom'
 
 const failMsg = 'fail in script: item-categories-wiki'
-const url = 'https://leagueoflegends.fandom.com/wiki/Item_(League_of_Legends)'
+// TEMP
+// const url = 'https://leagueoflegends.fandom.com/wiki/Item_(League_of_Legends)'
+const url = 'https://wiki.leagueoflegends.com/en-us/Item'
 const res = await fetch(url)
 
 const dom = new JSDOM(await res.text())
@@ -22,10 +24,11 @@ const extractItemNames = (div: Element | null) => {
   for (const _li of ul.children) {
     if (_li.nodeName != 'LI') throw failMsg
     const li = _li as HTMLLIElement
-    const img = li.querySelector('img')
-    if (img == null) throw failMsg
-    const itemName = img.alt.slice(0, img.alt.indexOf(' item'))
-    itemNames.push(itemName)
+    const _div = li.firstChild
+    if (_div == null || _div.nodeName != 'DIV') throw failMsg
+    const div = _div as HTMLDivElement
+    const itemName = div.getAttribute('data-item')
+    if (itemName != null) itemNames.push(itemName)
   }
   return itemNames
 }
