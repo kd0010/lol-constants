@@ -1,10 +1,10 @@
 import {lol} from 'lol-constants'
 
-const response: {
+const response: Array<{
   championName: string // ← is `string` and not `ChampionName`
   damageDealt: number
   /* ... */
-}[] = [
+}> = [
   {
     championName: 'Hwei',
     damageDealt: 2700,

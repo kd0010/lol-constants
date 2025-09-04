@@ -53,6 +53,7 @@ export const Queues = {
   2000: {id: 2000, title: 'Tutorial 1'},
   2010: {id: 2010, title: 'Tutorial 2'},
   2020: {id: 2020, title: 'Tutorial 3'},
+  3140: {id: 3140, title: 'Doom Bots'},
 } as const
 const failsafeQueue = {id: -1, title: ''} as const
 
@@ -115,6 +116,7 @@ const queueTitles = {
   'Tutorial 1': 2000,
   'Tutorial 2': 2010,
   'Tutorial 3': 2020,
+  'Doom Bots': 3140,
 } as const
 
 export function isQueueId(id: number | null | undefined): id is QueueId {

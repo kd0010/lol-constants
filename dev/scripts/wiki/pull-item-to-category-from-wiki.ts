@@ -4,8 +4,6 @@ import {writeFile} from 'fs/promises'
 import {JSDOM} from 'jsdom'
 
 const failMsg = 'fail in script: item-categories-wiki'
-// TEMP
-// const url = 'https://leagueoflegends.fandom.com/wiki/Item_(League_of_Legends)'
 const url = 'https://wiki.leagueoflegends.com/en-us/Item'
 const res = await fetch(url)
 

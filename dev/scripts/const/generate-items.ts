@@ -42,6 +42,7 @@ const ITEM_IDS_TO_SKIP = {
   323042: true, // Swiftplay item
   323121: true, // Swiftplay item
   447105: true, // Removed, Arena item
+  667666: true, // Non-SR The Collector
 }
 
 const VALID_SR_TYPES: {[srType in ItemSrType]} = {
@@ -69,6 +70,21 @@ const itemTypeFillers: {[itemName: string]: number} = {
   "Prowler's Claw": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
   "Gangplank Placeholder": ItemSrTypes.NONSR, // other
   "Anathema's Chains": ItemSrTypes.NONSR, // arena exclusive, no longer on SR
+  "Atma's Reckoning": ItemSrTypes.NONSR, // arena item
+  "Demon King's Crown": ItemSrTypes.NONSR, // arena item
+  "Shield of Molten Stone": ItemSrTypes.NONSR, // arena item
+  "Cloak of Starry Night": ItemSrTypes.NONSR, // arena item
+  "Sword of the Divine": ItemSrTypes.NONSR, // arena item
+  "Hextech Gunblade": ItemSrTypes.NONSR, // arena item
+  "Zephyr": ItemSrTypes.NONSR, // arena item
+  "Gargoyle Stoneplate": ItemSrTypes.NONSR, // arena item
+  "Sword of Blossoming Dawn": ItemSrTypes.NONSR, // arena item
+  "The Golden Spatula": ItemSrTypes.NONSR, // arena item
+  "Crown of the Shattered Queen": ItemSrTypes.NONSR, // arena item
+  "Gambler's Blade": ItemSrTypes.NONSR, // arena item
+  "Cruelty": ItemSrTypes.NONSR, // arena item
+  "Flesheater": ItemSrTypes.NONSR, // arena item
+  "Veigar's Talisman of Ascension": ItemSrTypes.NONSR, // doom bots item
 }
 
 type Item = {

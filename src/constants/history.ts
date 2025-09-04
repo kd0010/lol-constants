@@ -19,6 +19,7 @@ export const GameModes = {
   'KINGPORO': 'KINGPORO',
   'GAMEMODEX': 'GAMEMODEX',
   'ULTBOOK': 'ULTBOOK',
+  'PRACTICETOOL': 'PRACTICETOOL',
 } as const
 
 export type GameMode = typeof GameModes[keyof typeof GameModes]

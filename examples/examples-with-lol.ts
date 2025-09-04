@@ -157,7 +157,7 @@ rune.treeId // 8200 satisfies RuneTreeId
 rune.isKeystone // false
 rune.slot // 2 satisfies 0 | 1 | 2 | 3
 // `horizontal` contains neighboring rune ids (that are on the same row)
-rune.horizontal // [8210, 8234] satisfies readonly RuneId[]
+rune.horizontal // [8210, 8234] satisfies readonly Array<RuneId>
 
 // Stat runes
 const statRune = lol.rune.stat.get('Move Speed') || getStatRune('Move Speed') // {id: 5010, name: 'Move Speed', description: '+2% Move Speed', value: 0.02}

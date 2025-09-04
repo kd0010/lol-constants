@@ -1,8 +1,3 @@
-import {writeFileSync} from 'fs'
+import {createOut} from 'rift-js-utils/functions'
 
-export function out(
-  data: any,
-  title: string='out',
-) {
-  writeFileSync(`./dev/tmp/${title}.json`, JSON.stringify(data), {encoding: 'utf-8'})
-}
+export const out = createOut('dev/tmp')

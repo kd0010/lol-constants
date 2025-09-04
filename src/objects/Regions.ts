@@ -24,7 +24,9 @@ export const RegionsArr = Object.values(Regions)
 export type Region = typeof RegionsArr[number]['region']
 export type Platform = typeof RegionsArr[number]['platform']
 
-const platforms = {
+const platforms: {
+  [platform in Platform]: Region
+} = {
   'BR1': 'BR',
   'EUN1': 'EUNE',
   'EUW1': 'EUW',
@@ -43,7 +45,7 @@ const platforms = {
   'VN2': 'VN',
   'ME1': 'MENA',
   'PBE1': 'PBE',
-} as const
+}
 
 export function isRegion(region: string | null | undefined): region is Region {
   return typeof region == 'string' && region in Regions
