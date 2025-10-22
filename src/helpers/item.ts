@@ -122,3 +122,7 @@ export function isItemId(id: number | null | undefined): id is ItemId {
 export function isItemName(name: string | null | undefined): name is ItemName {
   return typeof name == 'string' && name in itemNames
 }
+
+export function isItem(id_name: number | string | null | undefined): id_name is ItemId | ItemName {
+  return typeof id_name == 'number' ? isItemId(id_name) : isItemName(id_name)
+}

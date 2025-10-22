@@ -101,12 +101,20 @@ export function isRuneName(name: string | null | undefined): name is RuneName {
   return typeof name == 'string' && name in runeNames
 }
 
+export function isRune(id_key_name: number | string | null | undefined): id_key_name is RuneId | RuneKey | RuneName {
+  return typeof id_key_name == 'number' ? isRuneId(id_key_name) : (isRuneKey(id_key_name) || isRuneName(id_key_name))
+}
+
 export function isStatRuneId(id: number | null | undefined): id is StatRuneId {
   return typeof id == 'number' && id in StatRunes
 }
 
 export function isStatRuneName(name: string | null | undefined): name is StatRuneName {
   return typeof name == 'string' && name in statRuneNames
+}
+
+export function isStatRune(id_name: number | string | null | undefined): id_name is StatRuneId | StatRuneName {
+  return typeof id_name == 'number' ? isStatRuneId(id_name) : isStatRuneName(id_name)
 }
 
 export function isRuneTreeId(id: number | null | undefined): id is RuneTreeId {
@@ -119,4 +127,8 @@ export function isRuneTreeKey(key: string | null | undefined): key is RuneTreeKe
 
 export function isRuneTreeName(name: string | null | undefined): name is RuneTreeName {
   return typeof name == 'string' && name in runeTreeNames
+}
+
+export function isRuneTree(id_key_name: number | string | null | undefined): id_key_name is RuneTreeId | RuneTreeKey | RuneTreeName {
+  return typeof id_key_name == 'number' ? isRuneTreeId(id_key_name) : (isRuneTreeKey(id_key_name) || isRuneTreeName(id_key_name))
 }

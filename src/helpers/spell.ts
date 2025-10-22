@@ -26,3 +26,7 @@ export function isSpellKey(key: string | null | undefined): key is SpellKey {
 export function isSpellName(name: string | null | undefined): name is SpellName {
   return typeof name == 'string' && name in spellNames
 }
+
+export function isSpell(id_key_name: number | string | null | undefined): id_key_name is SpellId | SpellKey | SpellName {
+  return typeof id_key_name == 'number' ? isSpellId(id_key_name) : (isSpellKey(id_key_name) || isSpellName(id_key_name))
+}

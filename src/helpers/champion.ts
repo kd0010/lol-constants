@@ -26,3 +26,7 @@ export function isChampionKey(key: string | null | undefined): key is ChampionKe
 export function isChampionName(name: string | null | undefined): name is ChampionName {
   return typeof name == 'string' && name in championNames
 }
+
+export function isChampion(id_key_name: number | string | null | undefined): id_key_name is ChampionId | ChampionKey | ChampionName {
+  return typeof id_key_name == 'number' ? isChampionId(id_key_name) : (isChampionKey(id_key_name) || isChampionName(id_key_name))
+}

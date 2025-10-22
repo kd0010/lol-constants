@@ -127,6 +127,10 @@ export function isQueueTitle(title: string | null | undefined): title is QueueTi
   return typeof title == 'string' && title in queueTitles
 }
 
+export function isQueue(id_title: number | string | null | undefined): id_title is QueueId | QueueTitle {
+  return typeof id_title == 'number' ? isQueueId(id_title) : isQueueTitle(id_title)
+}
+
 /** Get queue by its **id** or **title**. */
 export function getQueue(id_title: QueueId | QueueTitle): typeof Queues[keyof typeof Queues] {
   if (typeof id_title == 'number') return Queues[id_title] ?? failsafeQueue

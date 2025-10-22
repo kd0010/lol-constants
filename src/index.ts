@@ -20,6 +20,7 @@ export {
   isChampionId,
   isChampionKey,
   isChampionName,
+  isChampion,
 } from './helpers/champion'
 export {
   getItem,
@@ -33,6 +34,7 @@ export {
   isItemAvailableOnMap,
   isItemId,
   isItemName,
+  isItem,
 } from './helpers/item'
 export type {RiotId} from './helpers/riotId'
 export {
@@ -47,17 +49,21 @@ export {
   isRuneId,
   isRuneKey,
   isRuneName,
+  isRune,
   isStatRuneId,
   isStatRuneName,
+  isStatRune,
   isRuneTreeId,
   isRuneTreeKey,
   isRuneTreeName,
+  isRuneTree,
 } from './helpers/rune'
 export {
   getSpell,
   isSpellId,
   isSpellKey,
   isSpellName,
+  isSpell,
 } from './helpers/spell'
 
 // # objects
@@ -68,6 +74,7 @@ export {
   QueuesArr as Queues,
   isQueueId,
   isQueueTitle,
+  isQueue,
   getQueue,
 } from './objects/Queues'
 export type {Platform, Region} from './objects/Regions'
