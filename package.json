@@ -1,6 +1,6 @@
 {
   "name": "lol-constants",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "League of Legends constants, functions, and types. Provides a plathera of functions to easily convert between ID, Name, and Key for champions, items, summoner spells, and runes.",
   "license": "MIT",
   "type": "module",
@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "patch:update": "pnpm run scripts:pull && pnpm run scripts:generate && pnpm run build",
+    "update:patch": "pnpm run scripts:pull && pnpm run scripts:generate && pnpm run build",
     "temp": "node --no-warnings --loader ts-node/esm dev/scripts/temp",
     "scripts:pull": "node --no-warnings --loader ts-node/esm dev/scripts/pull-all-external-data",
     "scripts:generate": "node --no-warnings --loader ts-node/esm dev/scripts/generate-all-const",
@@ -20,13 +20,13 @@
     "dev": "vite"
   },
   "devDependencies": {
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^24.4.0",
-    "jsdom": "^26.1.0",
-    "rift-js-utils": "^2.15.0",
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^24.10.0",
+    "jsdom": "^27.1.0",
+    "rift-js-utils": "^2.15.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2",
-    "vite": "^5.4.20"
+    "typescript": "^5.9.3",
+    "vite": "^7.2.0"
   },
   "repository": {
     "type": "git",
@@ -42,5 +42,5 @@
     "typescript",
     "ts"
   ],
-  "packageManager": "pnpm@10.19.0+sha512.c9fc7236e92adf5c8af42fd5bf1612df99c2ceb62f27047032f4720b33f8eacdde311865e91c411f2774f618d82f320808ecb51718bfa82c060c4ba7c76a32b8"
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }

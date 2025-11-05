@@ -13,8 +13,8 @@
    - Check `src/enums/*`
    - Check `src/objects/*`
 2. Set new patch version in `src/Patch`
-3. `pnpm run patch:update`
+3. `pnpm run update:patch`
 ---
 1. version
-2. commit
+2. git commit
 3. `pnpm publish`
