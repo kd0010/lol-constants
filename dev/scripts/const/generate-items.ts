@@ -7,16 +7,23 @@ import {writeToTmpFile} from '../../helpers/writeToTmpFile'
 
 const ITEM_IDS_TO_SKIP = {
   1502: true, // "Reinforced Armor"
+  1505: true, // "Reinforced Armor"
   1506: true, // "Reinforced Armor"
+  1507: true, // "Overcharged"
   1516: true, // "Structure Bounty"
   1517: true, // "Structure Bounty"
   1518: true, // "Structure Bounty"
   1519: true, // "Structure Bounty"
   1501: true, // "Fortification"
   1521: true, // "Fortification"
+  1523: true, // "Overcharged"
+  1524: true, // "Overgrowth"
   1105: true, // "Mosstomper Seedling" (old id)
   1106: true, // "Gustwalker Hatchling" (old id)
   1107: true, // "Scorchclaw Pup" (old id)
+  2001: true, // "Recall"
+  2007: true, // "Disabled Recall"
+  3095: true, // (old) Stormrazor
   322065: true, // Swiftplay item
   323002: true, // Swiftplay item
   323003: true, // Swiftplay item
@@ -41,11 +48,14 @@ const ITEM_IDS_TO_SKIP = {
   328020: true, // Swiftplay item
   323042: true, // Swiftplay item
   323121: true, // Swiftplay item
+  322530: true, // Swiftplay item
+  322526: true, // Swiftplay item
   447105: true, // Removed, Arena item
   667666: true, // Non-SR The Collector
+  663146: true, // Non-SR Hextech Gunblade
 }
 
-const VALID_SR_TYPES: {[srType in ItemSrType]} = {
+const VALID_SR_TYPES: {[srType in ItemSrType]: boolean} = {
   '0': true,
   '1': true,
   '2': true,
@@ -105,6 +115,9 @@ for (itemId in Item.data) {
   if (itemId in ITEM_IDS_TO_SKIP) continue
 
   const item = Item.data[itemId]
+
+  if (item.name == '') continue
+
   let cleanItemName = item.name.replace(/<[^>]*>?/gm, '').replace('500 Silver Serpents', '')
   const itemIdNum = parseNumber(itemId, 'itemId')
 
@@ -118,7 +131,7 @@ for (itemId in Item.data) {
 
   const isSrItem = item.maps[11]
   let srType: number | undefined = isSrItem
-    ? itemNameToCtg[cleanItemName.toLowerCase()]
+    ? (itemNameToCtg as Record<string, number>)[cleanItemName.toLowerCase()]
     : ItemSrTypes.NONSR
 
   srType ??= itemTypeFillers[cleanItemName]
@@ -135,7 +148,7 @@ for (itemId in Item.data) {
   // Check for overlap in the maps in which the item appears
   const mapsObj = (itemNamesAsKeys[cleanItemName] ??= {}) as {[mapId: string]: number} // it is not yet the other variant (number)
   for (const mapId in item.maps) {
-    if (!item.maps[mapId]) continue
+    if (!(item.maps as Record<string, boolean>)[mapId]) continue
     if (mapId in mapsObj) _failedMapOverlapItems.push(cleanItemName)
     mapsObj[mapId] = itemIdNum
   }
