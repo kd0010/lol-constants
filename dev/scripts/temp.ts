@@ -1,2 +1,2 @@
-import {findItemInJson} from '../helpers/findItemInJson'
+import {findItemsInJson} from '../helpers/findItemsInJson'
 import {out} from '../helpers/out'
