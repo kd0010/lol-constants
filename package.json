@@ -1,6 +1,6 @@
 {
   "name": "lol-constants",
-  "version": "3.8.0+16.8",
+  "version": "3.9.0+16.9",
   "description": "League of Legends constants, functions, and types. Provides a plathera of functions to easily convert between ID, Name, and Key for champions, items, summoner spells, and runes.",
   "license": "MIT",
   "type": "module",
@@ -26,7 +26,7 @@
     "rift-js-utils": "^2.15.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^7.3.2"
   },
   "repository": {
     "type": "git",
@@ -42,5 +42,5 @@
     "typescript",
     "ts"
   ],
-  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
+  "packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8"
 }
