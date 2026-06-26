@@ -1,6 +1,6 @@
 {
   "name": "lol-constants",
-  "version": "3.11.0+16.12",
+  "version": "3.12.0+16.13",
   "description": "League of Legends constants, functions, and types. Provides a plathera of functions to easily convert between ID, Name, and Key for champions, items, summoner spells, and runes.",
   "license": "MIT",
   "type": "module",

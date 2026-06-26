@@ -12,17 +12,19 @@
     // ## Modules
     "module": "esnext",
     "moduleResolution": "node",
+    "rootDir": "./src",
 
     // ## Emit
     "declaration": true,
     "noEmitOnError": true,
     "outDir": "./dist",
-    
+
     // ## Interop Constraints
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
 
     // ## Language and Environment
+    "moduleDetection": "force",
     "target": "es2017",
   },
   "ts-node": {
